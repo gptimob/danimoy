@@ -271,7 +271,7 @@ p{margin:0}
 .retrato img{width:100%;height:100%;object-fit:cover}
 .quem p+p{margin-top:16px}
 .marcas{margin-top:44px;padding-top:28px;border-top:1px solid var(--filete-claro)}
-.grade-logo{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:480px;margin-top:18px}
+.grade-logo{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;max-width:640px;margin-top:18px}
 .logo-caixa{
   height:60px;border:1px solid var(--filete-claro);border-radius:2px;
   display:flex;align-items:center;justify-content:center;padding:12px;
@@ -339,6 +339,16 @@ p{margin:0}
 .rodape-base .destaque{color:var(--dourado);text-decoration:none}
 .direita{text-align:right}
 
+/* ---------- realce ---------- */
+.realce{
+  position:relative;display:inline;
+  background-image:linear-gradient(rgba(199,154,59,.35),rgba(199,154,59,.35));
+  background-repeat:no-repeat;
+  background-size:100% 0.34em;
+  background-position:0 88%;
+}
+.escuro .realce{background-image:linear-gradient(rgba(199,154,59,.30),rgba(199,154,59,.30))}
+
 /* ---------- responsivo ---------- */
 @media (max-width:900px){
   .video-slot{flex:0 0 calc((100% - 24px) / 3)}
@@ -350,7 +360,9 @@ p{margin:0}
 }
 @media (max-width:640px){
   :root{--respiro:24px;--secao:64px}
+  html,body{overflow-x:hidden}
   body{font-size:16px}
+  .menu{display:none}
   h1{font-size:34px;line-height:1.06;max-width:none}
   h2{font-size:28px}
   h3{font-size:19px}
@@ -363,7 +375,14 @@ p{margin:0}
   .hero-acoes .btn,.hero-acoes .btn-texto{width:100%;text-align:center}
   .btn{padding:18px 24px;font-size:15px}
   .btn-texto{border-bottom:0;border:1px solid var(--filete-claro-forte);border-radius:2px;padding:17px 24px}
-  .video-slot{flex:0 0 46%}
+  .video-slot{flex:0 0 44%}
+  .trilho{
+    margin-left:calc(var(--respiro) * -1);
+    margin-right:calc(var(--respiro) * -1);
+    padding-left:var(--respiro);
+    padding-right:var(--respiro);
+    scroll-padding-left:var(--respiro);
+  }
   .setas{display:none}
   .num{font-size:30px}
   .item{flex-direction:column;gap:10px}
@@ -401,7 +420,7 @@ p{margin:0}
 <section class="hero">
   <div class="wrap">
     <p class="eyebrow">Conteúdo de alimento · Dentro do supermercado</p>
-    <h1>Conteúdo de alimento feito na gôndola, não no estúdio.</h1>
+    <h1>Conteúdo de alimento feito <span class="realce">na gôndola</span>, não no estúdio.</h1>
     <p class="sub">Produzo vídeo de produto dentro de um supermercado real, para marcas de qualquer lugar do país. Você manda o produto, eu devolvo o conteúdo em sete dias.</p>
     <p class="sub">Quinze anos de varejo por trás de cada enquadramento.</p>
     <div class="hero-acoes">
@@ -443,13 +462,13 @@ p{margin:0}
 
       <figure class="video-slot">
         <button class="abrir-video" type="button"
-                data-completo="videos/completos/resenha-sorvete.mp4"
-                data-legenda="Resenha · sorvete">
+                data-completo="videos/completos/resenha-chocolate.mp4"
+                data-legenda="Resenha · chocolate">
           <div class="moldura">
-            <video src="videos/cortes/resenha-sorvete.mp4" poster="videos/capas/resenha-sorvete.jpg" muted loop playsinline preload="none"></video>
+            <video src="videos/cortes/resenha-chocolate.mp4" poster="videos/capas/resenha-chocolate.jpg" muted loop playsinline preload="none"></video>
             <span class="play" aria-hidden="true"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 1.5l11 6.5-11 6.5z"/></svg></span>
           </div>
-          <figcaption>Resenha · sorvete</figcaption>
+          <figcaption>Resenha · chocolate</figcaption>
         </button>
       </figure>
 
@@ -468,12 +487,12 @@ p{margin:0}
       <figure class="video-slot">
         <button class="abrir-video" type="button"
                 data-completo="videos/completos/demonstracao-airfryer.mp4"
-                data-legenda="Demonstração · sobremesa quente">
+                data-legenda="Demonstração · bombom">
           <div class="moldura">
             <video src="videos/cortes/demonstracao-airfryer.mp4" poster="videos/capas/demonstracao-airfryer.jpg" muted loop playsinline preload="none"></video>
             <span class="play" aria-hidden="true"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 1.5l11 6.5-11 6.5z"/></svg></span>
           </div>
-          <figcaption>Demonstração · sobremesa quente</figcaption>
+          <figcaption>Demonstração · bombom</figcaption>
         </button>
       </figure>
 
@@ -489,8 +508,43 @@ p{margin:0}
         </button>
       </figure>
 
-      <!-- FALTAM DOIS — regravar na loja, sem figurinha e sem etiqueta de preço:
-           gôndola · categoria a definir   e   comparativo · mesma linha
+      <figure class="video-slot">
+        <button class="abrir-video" type="button"
+                data-completo="videos/completos/gondola-pipoca.mp4"
+                data-legenda="Gôndola · snacks">
+          <div class="moldura">
+            <video src="videos/cortes/gondola-pipoca.mp4" poster="videos/capas/gondola-pipoca.jpg" muted loop playsinline preload="none"></video>
+            <span class="play" aria-hidden="true"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 1.5l11 6.5-11 6.5z"/></svg></span>
+          </div>
+          <figcaption>Gôndola · snacks</figcaption>
+        </button>
+      </figure>
+
+      <figure class="video-slot">
+        <button class="abrir-video" type="button"
+                data-completo="videos/completos/gondola-fondue.mp4"
+                data-legenda="Gôndola · laticínio">
+          <div class="moldura">
+            <video src="videos/cortes/gondola-fondue.mp4" poster="videos/capas/gondola-fondue.jpg" muted loop playsinline preload="none"></video>
+            <span class="play" aria-hidden="true"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 1.5l11 6.5-11 6.5z"/></svg></span>
+          </div>
+          <figcaption>Gôndola · laticínio</figcaption>
+        </button>
+      </figure>
+
+      <figure class="video-slot">
+        <button class="abrir-video" type="button"
+                data-completo="videos/completos/gondola-caldo.mp4"
+                data-legenda="Gôndola · massas e caldos">
+          <div class="moldura">
+            <video src="videos/cortes/gondola-caldo.mp4" poster="videos/capas/gondola-caldo.jpg" muted loop playsinline preload="none"></video>
+            <span class="play" aria-hidden="true"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 1.5l11 6.5-11 6.5z"/></svg></span>
+          </div>
+          <figcaption>Gôndola · massas e caldos</figcaption>
+        </button>
+      </figure>
+
+      <!-- Falta o COMPARATIVO. Regravar sem figurinha e sem etiqueta de preço.
            Depois é só duplicar um bloco acima e trocar os três caminhos. -->
     </div>
   </div>
@@ -502,8 +556,10 @@ p{margin:0}
     <div><p class="num-rotulo">Anos no varejo</p><p class="num">15</p></div>
     <div><p class="num-rotulo">Prazo de entrega</p><p class="num">7 dias</p></div>
     <div><p class="num-rotulo">Formatos por vídeo</p><p class="num">3</p></div>
-    <!-- Preencher quando os cinco vídeos existirem -->
-    <div><p class="num-rotulo">Categorias atendidas</p><p class="num">—</p></div>
+    <div><p class="num-rotulo">Categorias</p><p class="num">Todas*</p></div>
+  </div>
+  <div class="wrap" style="padding-top:0;padding-bottom:28px;display:block">
+    <p class="nota" style="color:var(--tx-claro-nota)">*Com exceção das categorias listadas nas perguntas frequentes. Alimento funcional, infantil e suplemento seguem roteiro fechado pela marca.</p>
   </div>
 </section>
 
@@ -541,7 +597,15 @@ p{margin:0}
       </div>
     </div>
 
-    <div class="combos">
+  </div>
+</section>
+
+<!-- ======================= COMBOS ======================= -->
+<section class="faixa tom" aria-labelledby="tit-combos">
+  <div class="wrap">
+    <p class="eyebrow" id="tit-combos">Combos</p>
+    <h2>Sai melhor<br>em conjunto</h2>
+    <div class="combos" style="margin-top:32px;padding-top:0;border-top:0">
       <div class="combo">
         <h3>Degustação</h3>
         <p>Três vídeos à escolha</p>
@@ -562,7 +626,7 @@ p{margin:0}
 </section>
 
 <!-- ======================= COMO FUNCIONA ======================= -->
-<section class="faixa tom" id="como-funciona">
+<section class="faixa" id="como-funciona">
   <div class="wrap">
     <p class="eyebrow">Como funciona</p>
     <h2>Sete dias,<br>quatro passos</h2>
@@ -604,44 +668,58 @@ p{margin:0}
 </section>
 
 <!-- ======================= QUEM FAZ ======================= -->
-<section class="faixa" id="quem-faz">
+<section class="faixa tom" id="quem-faz">
   <div class="wrap">
     <p class="eyebrow">Quem faz</p>
     <div class="quem">
-      <!-- Trocar pelo retrato na loja, corte 4:5 -->
       <div class="retrato">
-        <!-- <img src="dani-corredor.jpg" alt="Dani Moy no corredor de massas do supermercado"> -->
+        <img src="videos/fotos/dani-quem-faz.jpg" alt="Dani Moy no corredor de massas do supermercado, segurando dois produtos" width="880" height="1100">
       </div>
       <div>
-        <h2>Quinze anos<br>dentro do varejo</h2>
+        <h2><span class="realce">Quinze anos</span><br>dentro do varejo</h2>
         <p class="corpo" style="margin-top:20px">Sou Dani Moy. Trabalho há quinze anos com supermercado — a loja da minha família recebe 30 mil clientes por mês, e é lá que eu gravo.</p>
         <p class="corpo">Sei o que faz alguém parar na gôndola porque vejo isso acontecer todo dia. É por isso que o meu vídeo não parece feito em estúdio: ele parece a hora da compra.</p>
       </div>
     </div>
 
     <div class="marcas">
-      <p class="rotulo">Marcas com quem já trabalhei</p>
+      <!-- TÍTULO: use "Produtos que já filmei" enquanto não houver contrato
+           comprovado. Para as marcas que de fato contrataram, crie uma
+           segunda grade acima desta com o título "Marcas com quem já
+           trabalhei" — a distinção protege a credibilidade da página. -->
+      <p class="rotulo">Produtos que já filmei</p>
       <!-- Substituir os <span> por <img> com o logo em uma cor só (#5C5145),
            alinhados pela altura visual, não pela caixa. -->
       <div class="grade-logo">
         <div class="logo-caixa"><span>Nissin</span></div>
+        <div class="logo-caixa"><span>Nestlé</span></div>
+        <div class="logo-caixa"><span>Lacta</span></div>
+        <div class="logo-caixa"><span>Fanta</span></div>
+        <div class="logo-caixa"><span>Bauducco</span></div>
+        <div class="logo-caixa"><span>3 Corações</span></div>
+        <div class="logo-caixa"><span>Aurora</span></div>
+        <div class="logo-caixa"><span>Santa Clara</span></div>
         <div class="logo-caixa"><span>Vitao</span></div>
+        <div class="logo-caixa"><span>Ferrara</span></div>
+        <div class="logo-caixa"><span>Gramado Massas</span></div>
         <div class="logo-caixa"><span>Casagrande</span></div>
       </div>
+      <p class="nota" style="margin-top:16px">Marcas de alimento cujos produtos já apareceram em conteúdo meu, na loja ou na bancada.</p>
     </div>
   </div>
 </section>
 
 <!-- ======================= DEPOIMENTO ======================= -->
-<section class="faixa tom" aria-labelledby="tit-depo">
+<section class="faixa tom" style="padding-top:0" aria-labelledby="tit-depo">
   <div class="wrap">
     <p class="eyebrow" id="tit-depo">Depoimento</p>
-    <!-- Trocar pela frase real quando chegar -->
+    <!-- RASCUNHO PARA APROVAÇÃO DO KIKO — não publicar antes do aceite dele.
+         Ele pode reescrever à vontade; o que importa é ser verdade. -->
     <blockquote class="depo">
-      <p>“Espaço reservado — uma ou duas frases sobre o trabalho e o resultado.”</p>
+      <p>“A Dani entende de gôndola porque vive dentro de uma. O conteúdo dela não parece propaganda — parece alguém mostrando o produto pra você no corredor, que é exatamente o que faz o consumidor decidir na hora da compra.”</p>
       <footer>
-        <p class="depo-nome">Kiko · Cargo</p>
-        <p class="depo-empresa">Oniz Alimentos</p>
+        <p class="depo-nome">Kiko · Cofundador</p>
+        <p class="depo-empresa">Oniz Distribuidora</p>
       </footer>
     </blockquote>
   </div>
@@ -651,7 +729,7 @@ p{margin:0}
 <section class="faixa escuro" aria-labelledby="tit-dado">
   <div class="wrap">
     <p class="eyebrow" id="tit-dado">Dado de loja</p>
-    <h2>O que produtora<br>nenhuma entrega</h2>
+    <h2>O que produtora<br><span class="realce">nenhuma entrega</span></h2>
     <p class="corpo" style="margin-top:26px">Estar dentro de um supermercado dá acesso a informação que não existe em relatório de agência. Vale mesmo que seu produto ainda não esteja na prateleira.</p>
 
     <div class="lista">
@@ -712,7 +790,11 @@ p{margin:0}
     <p class="sub">Me diga o produto e o prazo. Respondo com escopo, roteiro sugerido e proposta em PDF para você levar internamente.</p>
 
     <!-- Apontar o action para o serviço de formulário escolhido -->
-    <form class="form" method="post" action="#">
+    <form class="form" method="POST" action="https://api.web3forms.com/submit">
+      <!-- Cole aqui a chave gratuita gerada em web3forms.com -->
+      <input type="hidden" name="access_key" value="COLE-SUA-CHAVE-AQUI">
+      <input type="hidden" name="subject" value="Nova proposta pelo site danimoy.com.br">
+      <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
       <div class="linha-campos">
         <div class="campo">
           <label for="nome">Nome</label>
@@ -764,14 +846,14 @@ p{margin:0}
       <div class="rodape-zap">
         <p>Prefere conversar antes<br>de pedir proposta?</p>
         <!-- Trocar 55DDDNNNNNNNN pelo número real com DDI e DDD -->
-        <a class="btn-contorno" href="https://wa.me/55DDDNNNNNNNN?text=Oi%20Dani%2C%20vim%20pelo%20site." target="_blank" rel="noopener">Falar no WhatsApp</a>
+        <a class="btn-contorno" href="https://wa.me/5554999166672?text=Oi%20Dani%2C%20vim%20pelo%20site." target="_blank" rel="noopener">Falar no WhatsApp</a>
       </div>
     </div>
 
     <div class="rodape-base">
       <p>
-        Passo Fundo, RS · <a href="mailto:contato@danimoy.com.br">contato@danimoy.com.br</a> · <a href="#">Instagram</a><br>
-        <a href="#">Política de privacidade</a>
+        Passo Fundo, RS · <a href="mailto:contato@danimoy.com.br">contato@danimoy.com.br</a> · <a href="https://instagram.com/danimoy.oficial" target="_blank" rel="noopener">Instagram</a><br>
+        <a href="privacidade.html">Política de privacidade</a>
       </p>
       <p class="direita">
         Já é fornecedor do Super Moy?<br>
