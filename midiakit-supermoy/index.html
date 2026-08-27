@@ -164,10 +164,38 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 .formato p{font-size:16px;color:var(--tx-forte);font-family:var(--display);font-weight:500}
 .formato span{font-family:var(--util);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--tx-fraco);white-space:nowrap;padding-top:4px}
 .duas-fotos{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.videos{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.vid{margin:0}
-.vid video{width:100%;aspect-ratio:9/16;object-fit:cover;background:var(--slot);border-radius:2px;display:block}
+
+.quatro{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:34px}
+.quatro h3{font-size:17px;margin-bottom:7px;color:var(--tx-claro)}
+.quatro p{font-size:15px;line-height:1.55;color:var(--tx-claro-fraco)}
+.quatro .topo-filete{border-top:1px solid var(--filete-escuro);padding-top:16px}
+.tag-vazia{visibility:hidden}
+.videos-topo{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:14px}
+.setas{display:flex;gap:8px}
+.seta{width:40px;height:40px;border:1px solid var(--filete-forte);border-radius:2px;background:transparent;color:var(--tx-forte);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:border-color .15s ease,opacity .15s ease}
+.seta:hover{border-color:var(--marrom)}
+.seta[disabled]{opacity:.3;cursor:default}
+.seta svg{width:15px;height:15px}
+.trilho{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding-bottom:4px;scrollbar-width:none;-ms-overflow-style:none}
+.trilho::-webkit-scrollbar{display:none}
+.vid{flex:0 0 calc((100% - 24px) / 3);scroll-snap-align:start;margin:0}
+.abrir-video{display:block;width:100%;padding:0;border:0;background:none;cursor:pointer;text-align:left;font:inherit;color:inherit}
+.moldura{position:relative;aspect-ratio:9/16;background:var(--slot);border-radius:2px;overflow:hidden}
+.moldura video{width:100%;height:100%;object-fit:cover;display:block}
+.play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:42px;height:42px;border-radius:50%;background:rgba(36,21,16,.6);color:var(--base);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .18s ease}
+.abrir-video:hover .play,.abrir-video:focus-visible .play{opacity:1}
+.play svg{width:14px;height:14px;margin-left:2px}
 .vid figcaption{font-family:var(--util);font-size:9.5px;text-transform:uppercase;letter-spacing:.14em;color:var(--tx-fraco);margin-top:9px}
+.modal{position:fixed;inset:0;z-index:50;background:rgba(20,11,7,.93);display:flex;align-items:center;justify-content:center;padding:24px}
+.modal[hidden]{display:none}
+.modal-caixa{width:min(400px,100%);display:flex;flex-direction:column;gap:14px}
+.modal-video{width:100%;max-height:76vh;aspect-ratio:9/16;object-fit:contain;background:#000;border-radius:2px}
+.modal-pe{display:flex;justify-content:space-between;align-items:center;gap:16px}
+.modal-legenda{font-family:var(--util);font-weight:500;font-size:10px;text-transform:uppercase;letter-spacing:.2em;color:var(--tx-claro-fraco)}
+.fechar{background:none;border:1px solid rgba(251,248,242,.3);border-radius:2px;color:var(--tx-claro);cursor:pointer;font-family:var(--display);font-weight:600;font-size:13px;padding:9px 16px;min-height:40px}
+.fechar:hover{border-color:var(--amarelo)}
+@media (max-width:980px){.quatro{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.quatro{grid-template-columns:1fr}.vid{flex:0 0 46%}.setas{display:none}}
 .lista{margin-top:26px}
 .item{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;padding:20px 0;border-bottom:1px solid var(--filete)}
 .item:last-child{border-bottom:0}
@@ -184,7 +212,7 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 .tl{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px solid var(--filete)}
 .tl p{font-family:var(--display);font-weight:500;font-size:15.5px;color:var(--tx-forte)}
 .tl span{font-family:var(--util);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--tx-fraco);white-space:nowrap;padding-top:3px}
-@media (max-width:760px){.tabela{grid-template-columns:1fr}.videos{grid-template-columns:1fr 1fr}}
+@media (max-width:760px){.tabela{grid-template-columns:1fr}}
 .ocupado{margin-top:18px;font-family:var(--util);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--marrom);background:var(--amarelo);display:inline-block;padding:6px 12px;border-radius:2px}
 .pacotes{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:38px}
 .pacote{background:var(--base);border-top:1px solid rgba(61,35,22,.3);padding:20px}
@@ -383,11 +411,77 @@ img{display:block;width:100%;height:100%;object-fit:cover}
       <p class="ocupado">Já produzido para Nissin, Vitao e Casagrande</p>
     </div>
     <div class="midia-lado">
-      <div class="videos">
-        <figure class="vid"><video src="../videos/cortes/gondola-pipoca.mp4" poster="../videos/capas/gondola-pipoca.jpg" muted loop playsinline preload="none"></video><figcaption>Gôndola · snacks</figcaption></figure>
-        <figure class="vid"><video src="../videos/cortes/gondola-fondue.mp4" poster="../videos/capas/gondola-fondue.jpg" muted loop playsinline preload="none"></video><figcaption>Gôndola · laticínio</figcaption></figure>
-        <figure class="vid"><video src="../videos/cortes/gondola-caldo.mp4" poster="../videos/capas/gondola-caldo.jpg" muted loop playsinline preload="none"></video><figcaption>Gôndola · massas</figcaption></figure>
-        <figure class="vid"><video src="../videos/cortes/resenha-chocolate.mp4" poster="../videos/capas/resenha-chocolate.jpg" muted loop playsinline preload="none"></video><figcaption>Resenha · chocolate</figcaption></figure>
+<div class="videos-topo">
+        <p class="rotulo" style="margin:0">Portfólio na loja</p>
+        <div class="setas">
+          <button class="seta" type="button" data-dir="-1" aria-label="Vídeos anteriores"><svg viewBox="0 0 16 16" fill="none"><path d="M10 2L4 8l6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <button class="seta" type="button" data-dir="1" aria-label="Próximos vídeos"><svg viewBox="0 0 16 16" fill="none"><path d="M6 2l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        </div>
+      </div>
+      <div class="trilho" id="trilho" tabindex="0" role="group" aria-label="Vídeos gravados na loja">
+      <figure class="vid">
+        <button class="abrir-video" type="button" data-completo="../videos/completos/gondola-pipoca.mp4" data-legenda="Gôndola · snacks">
+          <div class="moldura">
+            <video src="../videos/cortes/gondola-pipoca.mp4" poster="../videos/capas/gondola-pipoca.jpg" muted loop playsinline preload="none"></video>
+            <span class="play" aria-hidden="true"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 1.5l11 6.5-11 6.5z"/></svg></span>
+          </div>
+          <figcaption>Gôndola · snacks</figcaption>
+        </button>
+      </figure>
+      <figure class="vid">
+        <button class="abrir-video" type="button" data-completo="../videos/completos/gondola-fondue.mp4" data-legenda="Gôndola · laticínio">
+          <div class="moldura">
+            <video src="../videos/cortes/gondola-fondue.mp4" poster="../videos/capas/gondola-fondue.jpg" muted loop playsinline preload="none"></video>
+            <span class="play" aria-hidden="true"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 1.5l11 6.5-11 6.5z"/></svg></span>
+          </div>
+          <figcaption>Gôndola · laticínio</figcaption>
+        </button>
+      </figure>
+      <figure class="vid">
+        <button class="abrir-video" type="button" data-completo="../videos/completos/gondola-caldo.mp4" data-legenda="Gôndola · massas">
+          <div class="moldura">
+            <video src="../videos/cortes/gondola-caldo.mp4" poster="../videos/capas/gondola-caldo.jpg" muted loop playsinline preload="none"></video>
+            <span class="play" aria-hidden="true"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 1.5l11 6.5-11 6.5z"/></svg></span>
+          </div>
+          <figcaption>Gôndola · massas</figcaption>
+        </button>
+      </figure>
+      <figure class="vid">
+        <button class="abrir-video" type="button" data-completo="../videos/completos/resenha-chocolate.mp4" data-legenda="Resenha · chocolate">
+          <div class="moldura">
+            <video src="../videos/cortes/resenha-chocolate.mp4" poster="../videos/capas/resenha-chocolate.jpg" muted loop playsinline preload="none"></video>
+            <span class="play" aria-hidden="true"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 1.5l11 6.5-11 6.5z"/></svg></span>
+          </div>
+          <figcaption>Resenha · chocolate</figcaption>
+        </button>
+      </figure>
+      <figure class="vid">
+        <button class="abrir-video" type="button" data-completo="../videos/completos/demonstracao-airfryer.mp4" data-legenda="Demonstração · bombom">
+          <div class="moldura">
+            <video src="../videos/cortes/demonstracao-airfryer.mp4" poster="../videos/capas/demonstracao-airfryer.jpg" muted loop playsinline preload="none"></video>
+            <span class="play" aria-hidden="true"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 1.5l11 6.5-11 6.5z"/></svg></span>
+          </div>
+          <figcaption>Demonstração · bombom</figcaption>
+        </button>
+      </figure>
+      <figure class="vid">
+        <button class="abrir-video" type="button" data-completo="../videos/completos/curto-bebida.mp4" data-legenda="Vídeo curto · bebida">
+          <div class="moldura">
+            <video src="../videos/cortes/curto-bebida.mp4" poster="../videos/capas/curto-bebida.jpg" muted loop playsinline preload="none"></video>
+            <span class="play" aria-hidden="true"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 1.5l11 6.5-11 6.5z"/></svg></span>
+          </div>
+          <figcaption>Vídeo curto · bebida</figcaption>
+        </button>
+      </figure>
+      <figure class="vid">
+        <button class="abrir-video" type="button" data-completo="../videos/completos/curto-sobremesa.mp4" data-legenda="Vídeo curto · sobremesa">
+          <div class="moldura">
+            <video src="../videos/cortes/curto-sobremesa.mp4" poster="../videos/capas/curto-sobremesa.jpg" muted loop playsinline preload="none"></video>
+            <span class="play" aria-hidden="true"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 1.5l11 6.5-11 6.5z"/></svg></span>
+          </div>
+          <figcaption>Vídeo curto · sobremesa</figcaption>
+        </button>
+      </figure>
       </div>
     </div>
   </div>
@@ -428,7 +522,14 @@ img{display:block;width:100%;height:100%;object-fit:cover}
     <p class="eyebrow">O que mais ninguém entrega</p>
     <h2>O número de venda do<br>seu produto, <span class="realce">medido</span></h2>
     <p class="corpo" style="margin-top:24px">Nos pacotes com relatório, você recebe o giro do seu SKU comparado com as quatro semanas anteriores à ativação, mais foto da execução, leitura da prateleira com preço dos concorrentes e o que o cliente falou na frente da gôndola.</p>
-    <p style="margin-top:30px"><a class="btn" href="relatorio-exemplo.html">Ver um relatório completo</a></p>
+    <div class="quatro">
+      <div class="topo-filete"><h3>Giro contra baseline</h3><p>Quatro semanas antes, durante, e duas depois</p></div>
+      <div class="topo-filete"><h3>Foto de execução</h3><p>Sua marca exposta, como ficou de fato na gôndola</p></div>
+      <div class="topo-filete"><h3>Leitura de prateleira</h3><p>Preço e posição dos concorrentes na sua categoria</p></div>
+      <div class="topo-filete"><h3>Voz do shopper</h3><p>O que o cliente falou na frente da gôndola</p></div>
+    </div>
+
+    <p style="margin-top:38px"><a class="btn" href="relatorio-exemplo.html">Ver um relatório completo</a></p>
     <p class="nota" style="margin-top:26px;max-width:66ch">Leitura de uma loja no canal independente do interior do RS. É diagnóstico direcional, não estudo estatístico — e está escrito assim em todo relatório.</p>
   </div>
 </section>
@@ -441,13 +542,13 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 
     <div class="pacotes">
       <div class="pacote">
-        <h3>Experimentação</h3>
+        <span class="tag tag-vazia" aria-hidden="true">&nbsp;</span><h3>Experimentação</h3>
         <span class="preco">R$ 800<small>/mês</small></span>
         <div class="bloco-lista"><p class="t">Exposição</p><ul><li>Ponta na área de fundo</li></ul></div>
         <div class="bloco-lista"><p class="t">Conteúdo</p><ul><li>Sequência de 3 stories</li></ul></div>
       </div>
       <div class="pacote">
-        <h3>Vitrine</h3>
+        <span class="tag tag-vazia" aria-hidden="true">&nbsp;</span><h3>Vitrine</h3>
         <span class="preco">R$ 2.400<small>/mês</small></span>
         <div class="bloco-lista"><p class="t">Exposição</p><ul><li>Ponta iluminada</li><li>Tela LED</li></ul></div>
         <div class="bloco-lista"><p class="t">Conteúdo</p><ul><li>1 Reels com impulsionamento</li><li>3 stories</li></ul></div>
@@ -461,7 +562,7 @@ img{display:block;width:100%;height:100%;object-fit:cover}
         <div class="bloco-lista"><p class="t">Dado</p><ul><li>Relatório de sell-out</li></ul></div>
       </div>
       <div class="pacote">
-        <h3>Marca do mês</h3>
+        <span class="tag tag-vazia" aria-hidden="true">&nbsp;</span><h3>Marca do mês</h3>
         <span class="preco">R$ 8.500<small>/mês</small></span>
         <div class="bloco-lista"><p class="t">Exposição</p><ul><li>Ponta iluminada e ponto extra</li><li>Tela LED, rádio e checkstand</li><li>Duas degustações</li></ul></div>
         <div class="bloco-lista"><p class="t">Conteúdo</p><ul><li>Pack completo do mês</li><li>Encarte impulsionado</li></ul></div>
@@ -469,7 +570,22 @@ img{display:block;width:100%;height:100%;object-fit:cover}
       </div>
     </div>
 
-    <p class="nota" style="margin-top:28px;max-width:76ch">Itens de conteúdo também podem ser contratados avulsos, com preço aberto — <a href="#conteudo" style="color:var(--acento-tx);font-weight:500">ver tabela de conteúdo</a>. Contratos trimestrais têm condição especial. Bonificação é aceita como parte do pagamento, conforme o pacote.</p>
+    <div class="conta">
+      <p>Só o conteúdo do <strong>Vitrine</strong> — um Reels impulsionado e três stories — sai <strong>R$ 1.450</strong> avulso. No pacote, por <strong>R$ 2.400</strong>, ele vem com ponta de gôndola iluminada e tela LED durante o mês inteiro.</p>
+    </div>
+
+    <div class="duas" style="margin-top:36px;padding-top:30px;border-top:1px solid var(--filete)">
+      <div>
+        <h3>Se o giro não crescer</h3>
+        <p>Nos pacotes com relatório, se o SKU não crescer contra a baseline, o ciclo seguinte sai sem o fee de ativação. Você paga só a produção do conteúdo.</p>
+      </div>
+      <div>
+        <h3>Três marcas por vez</h3>
+        <p>São três pontas de gôndola iluminadas, na área por onde todo mundo passa. Não é gatilho de escassez, é limite físico — e a agenda costuma fechar com antecedência.</p>
+      </div>
+    </div>
+
+    <p class="nota" style="margin-top:30px;max-width:76ch">Itens de conteúdo também podem ser contratados avulsos, com preço aberto — <a href="#conteudo" style="color:var(--acento-tx);font-weight:500">ver tabela de conteúdo</a>. Contratos trimestrais têm condição especial. Bonificação é aceita como parte do pagamento, conforme o pacote.</p>
   </div>
 </section>
 
@@ -604,11 +720,49 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 <script>
 (function(){
   var calmo=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if(!('IntersectionObserver' in window)||calmo) return;
-  var o=new IntersectionObserver(function(is){is.forEach(function(i){
-    var v=i.target;if(i.isIntersecting){v.play().catch(function(){});}else{v.pause();}});},{threshold:.35});
-  document.querySelectorAll('.vid video').forEach(function(v){o.observe(v);});
+  var trilho=document.getElementById('trilho');
+
+  if(trilho){
+    var setas=document.querySelectorAll('.seta');
+    function passo(){var c=trilho.querySelector('.vid');return c?c.getBoundingClientRect().width+12:0;}
+    setas.forEach(function(b){b.addEventListener('click',function(){
+      trilho.scrollBy({left:passo()*Number(b.dataset.dir),behavior:calmo?'auto':'smooth'});});});
+    function estado(){var fim=trilho.scrollWidth-trilho.clientWidth-2;
+      setas.forEach(function(b){b.disabled=Number(b.dataset.dir)<0?trilho.scrollLeft<=2:trilho.scrollLeft>=fim;});}
+    trilho.addEventListener('scroll',estado,{passive:true});
+    window.addEventListener('resize',estado);estado();
+  }
+
+  if('IntersectionObserver' in window && !calmo){
+    var o=new IntersectionObserver(function(is){is.forEach(function(i){
+      var v=i.target.querySelector('video');if(!v)return;
+      if(i.isIntersecting){v.play().catch(function(){});}else{v.pause();}});},{threshold:.35});
+    document.querySelectorAll('.vid').forEach(function(v){o.observe(v);});
+  }
+
+  var modal=document.getElementById('modal'),mv=document.getElementById('modal-video'),
+      ml=document.getElementById('modal-legenda'),bt=document.getElementById('fechar'),ult=null;
+  function abrir(b){ult=b;mv.src=b.dataset.completo;ml.textContent=b.dataset.legenda||'';
+    modal.hidden=false;document.body.style.overflow='hidden';
+    document.querySelectorAll('.trilho video').forEach(function(v){v.pause();});
+    mv.play().catch(function(){});bt.focus();}
+  function fechar(){mv.pause();mv.removeAttribute('src');mv.load();modal.hidden=true;
+    document.body.style.overflow='';if(ult)ult.focus();}
+  document.querySelectorAll('.abrir-video').forEach(function(b){b.addEventListener('click',function(){abrir(b);});});
+  bt.addEventListener('click',fechar);
+  modal.addEventListener('click',function(e){if(e.target===modal)fechar();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!modal.hidden)fechar();});
 })();
 </script>
+
+<div class="modal" id="modal" hidden role="dialog" aria-modal="true" aria-label="Vídeo do portfólio">
+  <div class="modal-caixa">
+    <video class="modal-video" id="modal-video" controls playsinline preload="none"></video>
+    <div class="modal-pe">
+      <span class="modal-legenda" id="modal-legenda"></span>
+      <button class="fechar" type="button" id="fechar">Fechar</button>
+    </div>
+  </div>
+</div>
 </body>
 </html>
