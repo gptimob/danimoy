@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Relatório de sell-out · exemplo · Super Moy</title>
+<meta name="description" content="Exemplo do relatório de sell-out entregue nos pacotes Giro e Marca do mês do Super Moy. Dados fictícios, apenas para demonstração do formato.">
+<meta name="robots" content="noindex, follow">
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#241510">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,300;6..72,400&family=Poppins:wght@500;600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --base:#FBF8F2;--tom:#F0E9DC;--marrom:#3D2316;--escuro:#241510;
+  --amarelo:#FFC90D;--amarelo-fraco:#FFF3C9;
+  --tx-forte:#241510;--tx-corpo:#4A4038;--tx-fraco:#6E635A;--acento-tx:#8A5709;
+  --tx-claro:#FBF8F2;--tx-claro-fraco:#B8AE9F;--tx-claro-nota:#8C8276;
+  --filete:rgba(61,35,22,.22);--filete-escuro:rgba(251,248,242,.16);
+  --display:'Poppins',system-ui,sans-serif;--texto:'Newsreader',Georgia,serif;--util:'IBM Plex Mono',monospace;
+  --respiro:48px;
+}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--base);color:var(--tx-corpo);font-family:var(--texto);font-weight:300;font-size:17px;line-height:1.65}
+h1,h2,h3,.n,.btn{font-family:var(--display);margin:0;color:var(--tx-forte)}
+h1{font-weight:800;font-size:44px;line-height:1.05;letter-spacing:-.035em}
+h2{font-weight:800;font-size:30px;line-height:1.1;letter-spacing:-.03em}
+h3{font-weight:600;font-size:19px;letter-spacing:-.02em}
+p{margin:0}
+.wrap{max-width:900px;margin:0 auto;padding:0 var(--respiro)}
+.eyebrow{font-family:var(--util);font-weight:500;font-size:11px;text-transform:uppercase;letter-spacing:.24em;color:var(--acento-tx);margin:0 0 18px}
+.rotulo{font-family:var(--util);font-weight:500;font-size:10px;text-transform:uppercase;letter-spacing:.2em;color:var(--tx-fraco)}
+.nota{font-size:13.5px;line-height:1.6;color:var(--tx-fraco)}
+
+.aviso-topo{background:var(--amarelo);color:var(--marrom);padding:14px 0}
+.aviso-topo .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+.aviso-topo p{font-family:var(--display);font-weight:600;font-size:14px}
+.aviso-topo a{color:var(--marrom);font-family:var(--display);font-weight:600;font-size:13px}
+
+.capa{background:var(--escuro);padding:68px 0 60px}
+.capa h1,.capa h2{color:var(--tx-claro)}
+.capa .eyebrow{color:var(--amarelo)}
+.capa p{color:var(--tx-claro-fraco)}
+.marca-topo{font-family:var(--display);font-weight:800;font-size:18px;color:var(--amarelo);margin-bottom:40px}
+.marca-topo span{color:var(--tx-claro-fraco);font-weight:500}
+.meta{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:38px;padding-top:26px;border-top:1px solid var(--filete-escuro)}
+.meta .rotulo{color:var(--tx-claro-fraco);margin-bottom:7px}
+.meta p{font-family:var(--display);font-weight:600;font-size:15px;color:var(--tx-claro)}
+
+.sec{padding:60px 0;border-bottom:1px solid var(--filete)}
+.sec.tom{background:var(--tom)}
+.num-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
+.card{border-top:2px solid var(--filete);padding-top:16px}
+.card.alta{border-top-color:var(--amarelo)}
+.n{font-weight:800;font-size:38px;line-height:1;letter-spacing:-.03em}
+.n small{font-family:var(--display);font-weight:500;font-size:14px;color:var(--tx-fraco)}
+.card .rotulo{margin-bottom:10px}
+.delta{font-family:var(--display);font-weight:600;font-size:15px;color:#2E6B33;margin-top:6px}
+
+.linha-kv{display:flex;justify-content:space-between;gap:20px;padding:14px 0;border-bottom:1px solid var(--filete)}
+.linha-kv:last-child{border-bottom:0}
+.linha-kv .v{font-family:var(--display);font-weight:600;font-size:16px;color:var(--tx-forte);white-space:nowrap}
+.linha-kv p{font-size:16px}
+
+.tabela{width:100%;border-collapse:collapse;margin-top:22px}
+.tabela th{font-family:var(--util);font-weight:500;font-size:10px;text-transform:uppercase;letter-spacing:.16em;color:var(--tx-fraco);text-align:left;padding:0 12px 10px 0;border-bottom:1px solid var(--filete)}
+.tabela td{padding:13px 12px 13px 0;border-bottom:1px solid var(--filete);font-size:16px}
+.tabela td.d{font-family:var(--display);font-weight:600;color:var(--tx-forte);white-space:nowrap}
+.tabela tr.meu td{background:var(--amarelo-fraco)}
+.tabela tr.meu td:first-child{font-family:var(--display);font-weight:700}
+
+.foto-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}
+.foto{aspect-ratio:4/3;background:#DFD5C2;border-radius:2px;display:flex;align-items:flex-end;padding:10px}
+.foto span{font-family:var(--util);font-size:9.5px;text-transform:uppercase;letter-spacing:.14em;color:#5C5145}
+
+.fala{border-left:3px solid var(--amarelo);padding:4px 0 4px 18px;margin-bottom:20px}
+.fala p{font-size:18px;line-height:1.6;color:var(--tx-forte)}
+.fala .quem{font-family:var(--util);font-size:10px;text-transform:uppercase;letter-spacing:.16em;color:var(--tx-fraco);margin-top:8px}
+
+.reco{background:var(--escuro);padding:56px 0}
+.reco h2{color:var(--tx-claro)}
+.reco .eyebrow{color:var(--amarelo)}
+.reco ol{margin:28px 0 0;padding-left:22px}
+.reco li{font-size:17.5px;line-height:1.65;color:var(--tx-claro);margin-bottom:16px;max-width:64ch}
+.metodo{margin-top:36px;padding-top:24px;border-top:1px solid var(--filete-escuro)}
+.metodo p{font-size:13.5px;line-height:1.65;color:var(--tx-claro-nota);max-width:74ch}
+
+.pe{background:var(--marrom);padding:48px 0}
+.pe h2{color:var(--tx-claro);font-size:26px}
+.pe p{color:#E4DCCE;margin-top:12px;max-width:52ch;font-size:17px}
+.btn{display:inline-block;background:var(--amarelo);color:var(--marrom);font-weight:600;font-size:16px;padding:16px 30px;border-radius:2px;text-decoration:none;margin-top:24px}
+
+@media (max-width:760px){
+  :root{--respiro:24px}
+  html,body{overflow-x:hidden}
+  h1{font-size:30px}h2{font-size:23px}
+  .num-grid,.meta,.foto-grid{grid-template-columns:1fr}
+  .foto-grid{grid-template-columns:1fr 1fr}
+  .sec{padding:44px 0}
+  .capa{padding:44px 0}
+  .tabela th:nth-child(3),.tabela td:nth-child(3){display:none}
+}
+</style>
+</head>
+<body>
+
+<div class="aviso-topo">
+  <div class="wrap">
+    <p>Exemplo com dados fictícios — serve para mostrar o formato do relatório</p>
+    <a href="./">Voltar para o mídia kit</a>
+  </div>
+</div>
+
+<header class="capa">
+  <div class="wrap">
+    <p class="marca-topo">SUPER MOY <span>| relatório de ciclo</span></p>
+    <p class="eyebrow">Relatório de sell-out · 30 dias</p>
+    <h1>Marca Exemplo<br>Molho de tomate 340g</h1>
+    <div class="meta">
+      <div><p class="rotulo">Loja</p><p>Super Moy · Passo Fundo</p></div>
+      <div><p class="rotulo">Período do ciclo</p><p>02/03 a 31/03</p></div>
+      <div><p class="rotulo">Pacote</p><p>Giro</p></div>
+    </div>
+  </div>
+</header>
+
+<section class="sec">
+  <div class="wrap">
+    <p class="eyebrow">01 · Resultado</p>
+    <h2>O que mudou na prateleira</h2>
+
+    <div class="num-grid">
+      <div class="card">
+        <p class="rotulo">Baseline · 4 semanas antes</p>
+        <p class="n">41 <small>un/semana</small></p>
+      </div>
+      <div class="card alta">
+        <p class="rotulo">Durante o ciclo · 4 semanas</p>
+        <p class="n">86 <small>un/semana</small></p>
+        <p class="delta">+107% contra a baseline</p>
+      </div>
+      <div class="card">
+        <p class="rotulo">Residual · 2 semanas depois</p>
+        <p class="n">60 <small>un/semana</small></p>
+        <p class="delta">+45% contra a baseline</p>
+      </div>
+    </div>
+
+    <svg viewBox="0 0 900 260" style="width:100%;height:auto;margin-top:38px" role="img" aria-label="Gráfico de unidades vendidas por semana: quatro semanas de baseline em torno de 41 unidades, quatro semanas de ativação entre 78 e 96, e duas semanas de efeito residual em 62 e 58.">
+      <line x1="0" y1="215" x2="900" y2="215" stroke="rgba(61,35,22,.22)" stroke-width="1"/>
+      <g font-family="IBM Plex Mono, monospace" font-size="11" fill="#6E635A" letter-spacing="1">
+        <text x="0" y="243">S1</text><text x="86" y="243">S2</text><text x="172" y="243">S3</text><text x="258" y="243">S4</text>
+        <text x="344" y="243">S5</text><text x="430" y="243">S6</text><text x="516" y="243">S7</text><text x="602" y="243">S8</text>
+        <text x="688" y="243">S9</text><text x="774" y="243">S10</text>
+      </g>
+      <g>
+        <rect x="0" y="130" width="62" height="85" fill="#C4B79E"/>
+        <rect x="86" y="138" width="62" height="77" fill="#C4B79E"/>
+        <rect x="172" y="124" width="62" height="91" fill="#C4B79E"/>
+        <rect x="258" y="132" width="62" height="83" fill="#C4B79E"/>
+        <rect x="344" y="57" width="62" height="158" fill="#FFC90D"/>
+        <rect x="430" y="21" width="62" height="194" fill="#FFC90D"/>
+        <rect x="516" y="37" width="62" height="178" fill="#FFC90D"/>
+        <rect x="602" y="51" width="62" height="164" fill="#FFC90D"/>
+        <rect x="688" y="90" width="62" height="125" fill="#3D2316"/>
+        <rect x="774" y="98" width="62" height="117" fill="#3D2316"/>
+      </g>
+      <g font-family="Poppins, sans-serif" font-size="13" font-weight="600" fill="#241510" text-anchor="middle">
+        <text x="31" y="120">42</text><text x="117" y="128">38</text><text x="203" y="114">45</text><text x="289" y="122">41</text>
+        <text x="375" y="47">78</text><text x="461" y="11">96</text><text x="547" y="27">88</text><text x="633" y="41">81</text>
+        <text x="719" y="80">62</text><text x="805" y="88">58</text>
+      </g>
+    </svg>
+    <p class="nota" style="margin-top:14px">Cinza: baseline · Amarelo: período de ativação · Marrom: efeito residual</p>
+
+    <div style="margin-top:36px">
+      <div class="linha-kv"><p>Unidades vendidas no ciclo</p><span class="v">343</span></div>
+      <div class="linha-kv"><p>Participação na categoria de molhos</p><span class="v">9% → 17%</span></div>
+      <div class="linha-kv"><p>Dias em ruptura durante o período</p><span class="v">0</span></div>
+      <div class="linha-kv"><p>Ticket médio de quem levou o produto</p><span class="v">R$ 148,20</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec tom">
+  <div class="wrap">
+    <p class="eyebrow">02 · Execução</p>
+    <h2>O que foi feito, com data</h2>
+
+    <div class="foto-grid">
+      <div class="foto"><span>Ponta iluminada · 02/03</span></div>
+      <div class="foto"><span>Ponta iluminada · 16/03</span></div>
+      <div class="foto"><span>Degustação · 14/03</span></div>
+    </div>
+
+    <div style="margin-top:30px">
+      <div class="linha-kv"><p>Ponta de gôndola iluminada</p><span class="v">02/03 a 31/03</span></div>
+      <div class="linha-kv"><p>Rádio indoor</p><span class="v">4 spots/dia · 30 dias</span></div>
+      <div class="linha-kv"><p>Degustação de sábado</p><span class="v">14/03 · 214 provas</span></div>
+      <div class="linha-kv"><p>Conteúdo publicado</p><span class="v">10 peças</span></div>
+    </div>
+
+    <h3 style="margin-top:44px">Desempenho do conteúdo</h3>
+    <table class="tabela">
+      <thead><tr><th>Peça</th><th>Data</th><th>Formato</th><th>Alcance</th></tr></thead>
+      <tbody>
+        <tr><td>Reels · chegada do produto</td><td>04/03</td><td>Impulsionado</td><td class="d">112.400</td></tr>
+        <tr><td>Reels · receita com o molho</td><td>19/03</td><td>Impulsionado</td><td class="d">96.800</td></tr>
+        <tr><td>Post no feed · produto e preço</td><td>09/03</td><td>Orgânico</td><td class="d">18.200</td></tr>
+        <tr><td>Resenha em vídeo</td><td>23/03</td><td>Orgânico</td><td class="d">21.500</td></tr>
+        <tr><td>6 stories</td><td>diversos</td><td>Orgânico</td><td class="d">14.100</td></tr>
+      </tbody>
+    </table>
+    <p class="nota" style="margin-top:14px">Alcance somado de 263 mil. Verba de impulsionamento: R$ 300, com CPM de R$ 1,43.</p>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <p class="eyebrow">03 · Prateleira</p>
+    <h2>Como você está<br>contra a concorrência</h2>
+    <p class="nota" style="margin-top:18px;max-width:64ch">Leitura feita no dia 28/03, categoria de molhos de tomate, prateleira central do corredor de mercearia.</p>
+
+    <table class="tabela">
+      <thead><tr><th>Marca</th><th>Preço</th><th>Frentes</th><th>Altura</th></tr></thead>
+      <tbody>
+        <tr class="meu"><td>Marca Exemplo</td><td class="d">R$ 4,99</td><td>4</td><td>Olhos</td></tr>
+        <tr><td>Concorrente A</td><td class="d">R$ 4,49</td><td>6</td><td>Olhos</td></tr>
+        <tr><td>Concorrente B</td><td class="d">R$ 5,29</td><td>3</td><td>Acima</td></tr>
+        <tr><td>Concorrente C</td><td class="d">R$ 6,10</td><td>2</td><td>Abaixo</td></tr>
+        <tr><td>Marca própria da loja</td><td class="d">R$ 3,79</td><td>5</td><td>Abaixo</td></tr>
+      </tbody>
+    </table>
+
+    <div style="margin-top:32px">
+      <div class="linha-kv"><p>Seu preço contra a média da categoria</p><span class="v">−4%</span></div>
+      <div class="linha-kv"><p>Concorrente que ficou em ruptura no período</p><span class="v">Concorrente B · 6 dias</span></div>
+      <div class="linha-kv"><p>Material promocional de concorrente na gôndola</p><span class="v">Nenhum</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec tom">
+  <div class="wrap">
+    <p class="eyebrow">04 · Voz do shopper</p>
+    <h2>O que o cliente falou<br>na frente da gôndola</h2>
+    <p class="nota" style="margin-top:18px;max-width:64ch">Quinze abordagens no sábado 14/03, com autorização de gravação. Transcrição completa e áudios seguem em anexo.</p>
+
+    <div style="margin-top:32px">
+      <div class="fala">
+        <p>“Eu levo esse porque rende mais. O barato eu já tentei e fica muito aguado.”</p>
+        <p class="quem">Mulher · compra semanal</p>
+      </div>
+      <div class="fala">
+        <p>“Nunca tinha visto essa marca aqui. Vi na degustação e achei bom o tempero.”</p>
+        <p class="quem">Homem · primeira compra</p>
+      </div>
+      <div class="fala">
+        <p>“Eu olho o preço por grama. Se a diferença for pouca eu pego o melhor.”</p>
+        <p class="quem">Mulher · compra quinzenal</p>
+      </div>
+    </div>
+
+    <div style="margin-top:34px">
+      <div class="linha-kv"><p>Citaram preço como fator principal</p><span class="v">7 de 15</span></div>
+      <div class="linha-kv"><p>Citaram rendimento ou sabor</p><span class="v">6 de 15</span></div>
+      <div class="linha-kv"><p>Conheciam a marca antes do ciclo</p><span class="v">4 de 15</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="reco">
+  <div class="wrap">
+    <p class="eyebrow">05 · Recomendação</p>
+    <h2>O que fazer no<br>próximo ciclo</h2>
+    <ol>
+      <li>O Reels de receita segurou mais gente que o de chegada do produto. Para o próximo ciclo, priorizar conteúdo de uso em vez de anúncio de novidade.</li>
+      <li>Onze dos quinze entrevistados não conheciam a marca. O ciclo seguinte deveria repetir a degustação, que foi a origem declarada da primeira compra em vários casos.</li>
+      <li>Você tem quatro frentes contra seis do concorrente A, com preço 11% acima. Um ajuste de duas frentes a mais tende a valer mais que desconto.</li>
+      <li>Janela sugerida: segunda quinzena de maio, antes do pico de inverno na categoria de massas e molhos.</li>
+    </ol>
+
+    <div class="metodo">
+      <p><strong style="font-family:var(--display);font-weight:600;color:var(--tx-claro-fraco)">Metodologia.</strong> Dados de sell-out extraídos do ERP do Super Moy, uma loja, no canal independente do interior do Rio Grande do Sul. É leitura direcional, não estudo estatístico. Fatores externos como sazonalidade, promoção de concorrente, ruptura e variação de fluxo da loja influenciam o resultado e estão apontados quando identificados. O Super Moy tem interesse comercial na venda do produto avaliado, e essa relação está declarada aqui por transparência.</p>
+    </div>
+  </div>
+</section>
+
+<section class="pe">
+  <div class="wrap">
+    <h2>Quer esse relatório<br>para o seu SKU?</h2>
+    <p>Ele acompanha os pacotes Giro e Marca do mês, sem custo adicional. Também pode ser contratado avulso.</p>
+    <a class="btn" href="./#pacotes">Ver os pacotes</a>
+  </div>
+</section>
+
+</body>
+</html>

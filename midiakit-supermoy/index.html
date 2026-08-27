@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mídia kit · Super Moy · Passo Fundo</title>
+<meta name="description" content="Mídia kit do Super Moy: painéis externos, corredores adesivados, telas LED, rádio indoor, checkouts, carrinhos, pontas de gôndola, pontos extras, checkstands, redes sociais e relatório de sell-out.">
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta name="theme-color" content="#241510">
+<meta property="og:title" content="Mídia kit · Super Moy">
+<meta property="og:description" content="Mais de 30 mil clientes por mês no centro de Passo Fundo. Todo o inventário de mídia da loja, com formatos e planos.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:url" content="https://danimoy.com.br/midiakit-supermoy/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,300;6..72,400&family=Poppins:wght@500;600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --base:#FBF8F2;--tom:#F0E9DC;--marrom:#3D2316;--escuro:#241510;
+  --amarelo:#FFC90D;--amarelo-hover:#E5B400;--amarelo-fraco:#FFF3C9;
+  --tx-forte:#241510;--tx-corpo:#4A4038;--tx-fraco:#6E635A;--tx-fraco-tom:#5C5145;--acento-tx:#8A5709;
+  --tx-claro:#FBF8F2;--tx-claro-corpo:#E4DCCE;--tx-claro-fraco:#B8AE9F;--tx-claro-nota:#8C8276;
+  --slot:#DFD5C2;--slot-escuro:#3A2A20;
+  --filete:rgba(61,35,22,.22);--filete-forte:rgba(61,35,22,.32);--filete-escuro:rgba(251,248,242,.16);
+  --display:'Poppins',system-ui,-apple-system,sans-serif;--texto:'Newsreader',Georgia,serif;--util:'IBM Plex Mono',monospace;
+  --largura:1200px;--respiro:48px;--secao:88px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--base);color:var(--tx-corpo);font-family:var(--texto);font-weight:300;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+h1,h2,h3,.num,.btn{font-family:var(--display);margin:0;color:var(--tx-forte)}
+h1{font-weight:800;font-size:56px;line-height:1.04;letter-spacing:-.035em;max-width:16ch}
+h2{font-weight:800;font-size:38px;line-height:1.08;letter-spacing:-.03em}
+h3{font-weight:600;font-size:20px;line-height:1.25;letter-spacing:-.02em}
+p{margin:0}
+a{color:inherit}
+.wrap{max-width:var(--largura);margin:0 auto;padding:0 var(--respiro)}
+.faixa{padding:var(--secao) 0}
+.tom{background:var(--tom)}
+.escuro{background:var(--escuro)}
+.escuro h1,.escuro h2,.escuro h3{color:var(--tx-claro)}
+.escuro .corpo{color:var(--tx-claro-corpo)}
+.escuro .eyebrow{color:var(--amarelo)}
+.escuro .nota{color:var(--tx-claro-nota)}
+.eyebrow{font-family:var(--util);font-weight:500;font-size:11.5px;text-transform:uppercase;letter-spacing:.24em;color:var(--acento-tx);margin:0 0 20px}
+.corpo{font-size:17px;line-height:1.65;max-width:62ch;color:var(--tx-corpo)}
+.nota{font-size:13.5px;line-height:1.6;color:var(--tx-fraco)}
+.realce{background-image:linear-gradient(rgba(255,201,13,.45),rgba(255,201,13,.45));background-repeat:no-repeat;background-size:100% .34em;background-position:0 88%}
+.escuro .realce{background-image:linear-gradient(rgba(255,201,13,.30),rgba(255,201,13,.30))}
+.btn{display:inline-block;font-size:16px;font-weight:600;background:var(--amarelo);color:var(--marrom);padding:17px 32px;border-radius:2px;text-decoration:none;min-height:52px;transition:background .15s ease}
+.btn:hover{background:var(--amarelo-hover)}
+.btn-contorno{font-family:var(--display);font-weight:600;font-size:15px;color:var(--tx-claro);text-decoration:none;border:1px solid rgba(251,248,242,.32);padding:15px 26px;border-radius:2px;display:inline-block;min-height:52px}
+.btn-contorno:hover{border-color:var(--amarelo)}
+:focus-visible{outline:2px solid var(--amarelo);outline-offset:3px}
+
+.topo{background:var(--escuro)}
+.topo .wrap{display:flex;justify-content:space-between;align-items:center;padding:22px var(--respiro);gap:16px}
+.marca{font-family:var(--display);font-weight:800;font-size:19px;color:var(--amarelo);text-decoration:none}
+.marca{display:flex;align-items:center;gap:14px}
+.marca img{width:auto;height:38px;display:block}
+.marca span{color:var(--tx-claro-fraco);font-weight:500;font-family:var(--util);font-size:10.5px;text-transform:uppercase;letter-spacing:.2em;padding-left:14px;border-left:1px solid rgba(251,248,242,.25)}
+.logo-pe{width:auto;height:56px;display:block;margin-bottom:14px}
+.menu{display:flex;gap:24px}
+.menu a{font-family:var(--util);font-weight:500;font-size:10.5px;text-transform:uppercase;letter-spacing:.22em;color:var(--tx-claro-fraco);text-decoration:none}
+.menu a:hover{color:var(--amarelo)}
+
+.hero{background:var(--escuro);padding:70px 0 78px}
+.hero h1{color:var(--tx-claro)}
+.hero p{color:var(--tx-claro-corpo);font-size:21px;line-height:1.55;max-width:52ch;margin-top:24px}
+.selo{display:inline-block;font-family:var(--util);font-weight:500;font-size:11px;text-transform:uppercase;letter-spacing:.2em;background:var(--amarelo);color:var(--marrom);padding:6px 13px;border-radius:2px;margin-bottom:22px}
+.hero-acoes{display:flex;gap:20px;flex-wrap:wrap;margin-top:36px;align-items:center}
+
+.numeros .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding-top:38px;padding-bottom:38px}
+.num{font-weight:800;font-size:38px;line-height:1;letter-spacing:-.02em}
+.num-rotulo{font-family:var(--util);font-weight:500;font-size:10.5px;text-transform:uppercase;letter-spacing:.2em;color:var(--tx-fraco);margin:0 0 10px}
+
+.grade{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:36px;background:var(--filete)}
+.midia{background:var(--base);padding:26px 24px 28px}
+.tom .midia{background:var(--tom)}
+.plano{display:inline-block;font-family:var(--util);font-weight:500;font-size:9.5px;text-transform:uppercase;letter-spacing:.16em;color:var(--marrom);background:var(--amarelo);padding:3px 9px;border-radius:2px;margin-bottom:12px}
+.midia h3{margin-bottom:10px}
+.midia ul{margin:0;padding-left:16px}
+.midia li{font-size:15px;line-height:1.55;color:var(--tx-fraco-tom);margin-bottom:5px}
+
+.destaque-bloco{background:var(--amarelo);color:var(--marrom);border-radius:2px;padding:26px 30px;margin-top:38px}
+.destaque-bloco h3{color:var(--marrom);margin-bottom:10px}
+.destaque-bloco p{font-size:16.5px;line-height:1.6;max-width:76ch}
+.destaque-bloco a{font-family:var(--display);font-weight:700;color:var(--marrom)}
+
+.duas{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:36px}
+.duas h3{margin-bottom:10px}
+.duas p{font-size:16.5px;line-height:1.6;color:var(--tx-fraco-tom)}
+.escuro .duas p{color:var(--tx-claro-corpo)}
+
+.passos{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:34px}
+.passo{border-top:2px solid var(--amarelo);padding-top:16px}
+.passo .n{font-family:var(--util);font-size:10px;letter-spacing:.2em;color:var(--acento-tx);margin-bottom:9px}
+.passo h3{font-size:17px;margin-bottom:6px}
+.passo p{font-size:15px;line-height:1.55;color:var(--tx-fraco-tom)}
+
+.cta{background:var(--marrom);padding:var(--secao) 0}
+.cta h2{color:var(--tx-claro)}
+.cta p{color:var(--tx-claro-corpo);font-size:19px;line-height:1.55;max-width:54ch;margin-top:16px}
+.form{max-width:600px;margin-top:34px}
+.linha{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+.campo label{display:block;font-family:var(--util);font-weight:500;font-size:10px;text-transform:uppercase;letter-spacing:.2em;color:var(--tx-claro-fraco);margin-bottom:7px}
+.campo input,.campo select{width:100%;height:48px;padding:0 14px;background:#4E3122;border:1px solid transparent;border-radius:2px;font-family:var(--texto);font-size:16px;color:var(--tx-claro)}
+.campo select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23B8AE9F' stroke-width='1.6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;background-size:12px;padding-right:38px}
+.campo input:focus,.campo select:focus{border-color:var(--amarelo);outline:none}
+.form-nota{font-size:13.5px;line-height:1.6;color:#A8907E;margin-top:18px}
+
+.rodape{background:var(--escuro);padding:40px 0 34px}
+.rodape-topo{display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap}
+.rodape-zap{text-align:right}
+.rodape-zap p{font-size:16px;line-height:1.6;color:var(--tx-claro-corpo);margin-bottom:16px}
+.rodape-base{margin-top:30px;padding-top:22px;border-top:1px solid var(--filete-escuro);display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.rodape-base p{font-size:13.5px;line-height:1.75;color:var(--tx-claro-nota)}
+.rodape-base a{color:var(--tx-claro-nota)}
+.rodape-base .destaque{color:var(--amarelo);text-decoration:none}
+.direita{text-align:right}
+
+@media (max-width:980px){
+  .grade{grid-template-columns:repeat(2,1fr)}
+  .passos{grid-template-columns:1fr 1fr}
+  .numeros .wrap{grid-template-columns:1fr 1fr;gap:28px}
+}
+@media (max-width:640px){
+  :root{--respiro:24px;--secao:60px}
+  html,body{overflow-x:hidden}
+  body{font-size:16px}
+  .menu{display:none}
+  h1{font-size:31px;max-width:none}
+  h2{font-size:26px}
+  h3{font-size:18px}
+  .hero{padding:48px 0 54px}
+  .hero p{font-size:17px}
+  .hero-acoes{gap:14px}
+  .hero-acoes .btn,.hero-acoes .btn-contorno{width:100%;text-align:center}
+  .grade,.duas,.passos{grid-template-columns:1fr}
+  .num{font-size:29px}
+  .rodape-zap,.rodape-base,.direita{text-align:left}
+}
+
+img{display:block;width:100%;height:100%;object-fit:cover}
+.ft{background:var(--slot);border-radius:2px;overflow:hidden;display:flex;align-items:flex-end;padding:12px}
+.escuro .ft{background:var(--slot-escuro)}
+.ft span{font-family:var(--util);font-size:9.5px;text-transform:uppercase;letter-spacing:.14em;color:#5C5145}
+.escuro .ft span{color:var(--tx-claro-fraco)}
+.ft-larga{aspect-ratio:16/9}.ft-quadro{aspect-ratio:4/3}.ft-alta{aspect-ratio:3/4}.ft-capa{aspect-ratio:21/9}
+.hero .ft-capa{margin-top:52px;border-radius:2px 2px 0 0}
+.etapa{padding:var(--secao) 0;border-bottom:1px solid var(--filete)}
+.etapa:nth-of-type(even){background:var(--tom)}
+.etapa .wrap{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center}
+.etapa:nth-of-type(even) .midia-lado{order:-1}
+.passo-n{font-family:var(--util);font-weight:500;font-size:11px;letter-spacing:.24em;color:var(--acento-tx);margin-bottom:16px}
+.etapa h2{font-size:34px;margin-bottom:18px}
+.etapa .corpo{margin-bottom:26px}
+.formatos{border-top:1px solid var(--filete);padding-top:18px}
+.formato{display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-bottom:1px solid var(--filete)}
+.formato:last-child{border-bottom:0}
+.formato p{font-size:16px;color:var(--tx-forte);font-family:var(--display);font-weight:500}
+.formato span{font-family:var(--util);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--tx-fraco);white-space:nowrap;padding-top:4px}
+.duas-fotos{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.videos{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.vid{margin:0}
+.vid video{width:100%;aspect-ratio:9/16;object-fit:cover;background:var(--slot);border-radius:2px;display:block}
+.vid figcaption{font-family:var(--util);font-size:9.5px;text-transform:uppercase;letter-spacing:.14em;color:var(--tx-fraco);margin-top:9px}
+.lista{margin-top:26px}
+.item{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;padding:20px 0;border-bottom:1px solid var(--filete)}
+.item:last-child{border-bottom:0}
+.escuro .item{border-bottom-color:var(--filete-escuro)}
+.item-desc{font-size:16px;line-height:1.5;color:var(--tx-fraco);margin-top:5px;max-width:58ch}
+.escuro .item-desc{color:var(--tx-claro-fraco)}
+.metrica{font-family:var(--util);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--acento-tx);margin-top:9px}
+.escuro .metrica{color:var(--amarelo)}
+.preco{font-family:var(--display);font-weight:800;font-size:22px;letter-spacing:-.02em;white-space:nowrap;color:var(--tx-forte)}
+.escuro .preco{color:var(--tx-claro)}
+.preco small{font-family:var(--display);font-weight:500;font-size:14px;color:var(--tx-fraco)}
+.escuro .preco small{color:var(--tx-claro-fraco)}
+.tabela{margin-top:30px;display:grid;grid-template-columns:1fr 1fr;gap:0 44px}
+.tl{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px solid var(--filete)}
+.tl p{font-family:var(--display);font-weight:500;font-size:15.5px;color:var(--tx-forte)}
+.tl span{font-family:var(--util);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--tx-fraco);white-space:nowrap;padding-top:3px}
+@media (max-width:760px){.tabela{grid-template-columns:1fr}.videos{grid-template-columns:1fr 1fr}}
+.ocupado{margin-top:18px;font-family:var(--util);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--marrom);background:var(--amarelo);display:inline-block;padding:6px 12px;border-radius:2px}
+.pacotes{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:38px}
+.pacote{background:var(--base);border-top:1px solid rgba(61,35,22,.3);padding:20px}
+.pacote.destaque{border-top:4px solid var(--amarelo)}
+.tag{display:inline-block;font-family:var(--util);font-weight:500;font-size:9.5px;text-transform:uppercase;letter-spacing:.16em;background:var(--amarelo);color:var(--marrom);padding:3px 9px;border-radius:2px;margin-bottom:10px}
+.pacote h3{font-size:19px;margin-bottom:6px}
+.pacote .preco{font-family:var(--display);font-weight:800;font-size:27px;letter-spacing:-.03em;display:block;margin-bottom:16px;color:var(--tx-forte)}
+.pacote .preco small{font-weight:500;font-size:14px;color:var(--tx-fraco)}
+.bloco-lista{margin-bottom:14px}
+.bloco-lista p.t{font-family:var(--util);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--acento-tx);margin-bottom:7px}
+.bloco-lista ul{margin:0;padding-left:15px}
+.bloco-lista li{font-size:14.5px;line-height:1.5;color:var(--tx-fraco-tom);margin-bottom:4px}
+.longo{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:34px}
+.longo .item{border-top:1px solid var(--filete);padding-top:16px}
+.longo h3{font-size:17px;margin-bottom:6px}
+.longo p{font-size:15px;line-height:1.55;color:var(--tx-fraco-tom)}
+.longo .plano{font-family:var(--util);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--acento-tx);margin-bottom:9px}
+@media (max-width:980px){
+  .pacotes{grid-template-columns:1fr 1fr}.longo{grid-template-columns:1fr 1fr}
+  .etapa .wrap{grid-template-columns:1fr;gap:32px}
+  .etapa:nth-of-type(even) .midia-lado{order:0}
+}
+@media (max-width:640px){
+  .pacotes,.longo{grid-template-columns:1fr}
+  .etapa h2{font-size:26px}
+  .hero .ft-capa{aspect-ratio:16/9;margin-top:34px}
+}
+</style>
+</head>
+<body>
+
+<header class="topo">
+  <div class="wrap">
+    <a class="marca" href="./" aria-label="Super Moy · mídia kit">
+      <img src="fotos/logo-supermoy.png" srcset="fotos/logo-supermoy.png 1x, fotos/logo-supermoy@2x.png 2x" alt="Super Moy Supermercado" width="297" height="220">
+      <span>mídia kit</span>
+    </a>
+    <nav class="menu" aria-label="Navegação principal">
+      <a href="#longo">Inventário</a>
+      <a href="#jornada">A loja</a>
+      <a href="#conteudo">Conteúdo</a>
+      <a href="#pacotes">Pacotes</a>
+      <a href="#contratar">Contratar</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="selo">Fornecedores e parceiros</span>
+    <h1>30.000 pessoas passam por aqui todo mês. <span class="realce">Onde a sua marca aparece?</span></h1>
+    <p>No coração de Passo Fundo, em uma das vias mais movimentadas da cidade. Vinte anos de rua, loja nova e um cliente que volta toda semana.</p>
+    <div class="hero-acoes">
+      <a class="btn" href="#jornada">Ver o caminho na loja</a>
+      <a class="btn-contorno" href="#contratar">Receber a tabela</a>
+    </div>
+    <!-- FOTO 1 · fachada da loja, de dia, com movimento na calçada · 21:9 -->
+    <figure class="ft ft-capa" style="margin:52px 0 0;padding:0"><img src="fotos/fachada.jpg" alt="Fachada do Super Moy na esquina da General Osório, no centro de Passo Fundo" fetchpriority="high"></figure>
+  </div>
+</section>
+
+<section class="numeros tom" id="loja" aria-label="A loja em números">
+  <div class="wrap">
+    <div><p class="num-rotulo">Tickets por mês</p><p class="num">30.000</p></div>
+    <div><p class="num-rotulo">Anos de atuação</p><p class="num">20+</p></div>
+    <div><p class="num-rotulo">Alcance por Reels*</p><p class="num">100 mil</p></div>
+    <div><p class="num-rotulo">Pontas iluminadas</p><p class="num">3</p></div>
+  </div>
+  <div class="wrap" style="padding-bottom:30px">
+    <figure class="ft ft-capa" style="padding:0;margin:0 0 18px"><img src="fotos/movimento.jpg" alt="Movimento nos caixas do Super Moy em dia de pico" loading="lazy"></figure>
+    <p class="nota">*Alcance impulsionado, com verba de mídia da loja, para público local. Média dos últimos doze meses. Loja nova, moderna, com mix de produtos diferenciado e presença forte nas redes sociais.</p>
+  </div>
+</section>
+
+<div id="jornada"></div>
+
+<section class="etapa">
+  <div class="wrap">
+    <div>
+      <p class="passo-n">Etapa 01 · Antes de entrar</p>
+      <h2>Ele vê sua marca<br>da rua</h2>
+      <p class="corpo">A loja fica numa das vias de maior movimento de Passo Fundo. Painel externo aqui não fala só com quem entra — fala com todo mundo que passa de carro, todo dia, no mesmo horário.</p>
+      <div class="formatos">
+        <div class="formato"><p>Painel externo 5m × 2,50m</p><span>Plano anual</span></div>
+        <div class="formato"><p>Painel externo 2,30m × 2,30m</p><span>Plano anual</span></div>
+      </div>
+      <p class="ocupado">Ocupado hoje pela Pepsi</p>
+    </div>
+    <div class="midia-lado">
+      <!-- FOTO 2 · painel externo instalado, visto da rua · 4:3 -->
+      <figure class="ft ft-quadro" style="padding:0"><img src="fotos/painel-externo.jpg" alt="Painel externo na fachada do Super Moy ocupado pela Pepsi" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="etapa">
+  <div class="wrap">
+    <div>
+      <p class="passo-n">Etapa 02 · Entrando</p>
+      <h2>A primeira coisa<br>que ele vê</h2>
+      <p class="corpo">Os primeiros segundos dentro da loja são os de menos disputa. O ponto extra na entrada é a primeira coisa que o cliente vê. O carrinho acompanha a compra inteira, e o rádio indoor toca durante todo o percurso.</p>
+      <div class="formatos">
+        <div class="formato"><p>Ponto extra de entrada · volume e sazonal</p><span>Plano mensal</span></div>
+        <div class="formato"><p>16 carrinhos · 64 placas internas e externas</p><span>Plano anual</span></div>
+        <div class="formato"><p>Rádio indoor · promoções, informações e música</p><span>Plano semestral</span></div>
+      </div>
+      <p class="ocupado">Entrada ocupada hoje pela Original</p>
+    </div>
+    <div class="midia-lado duas-fotos">
+      <figure class="ft ft-alta" style="padding:0"><img src="fotos/entrada-ponto-extra.jpg" alt="Ponto extra de entrada com pallet da cerveja Original" loading="lazy"></figure>
+      <!-- FALTA: carrinho do Super Moy, close da placa · 3:4 · salvar como fotos/carrinho.jpg -->
+      <figure class="ft ft-alta"><span>Foto · carrinho</span></figure>
+    </div>
+  </div>
+</section>
+
+<section class="etapa">
+  <div class="wrap">
+    <div>
+      <p class="passo-n">Etapa 03 · No corredor</p>
+      <h2>Ele anda devagar<br>e lê o que está na frente</h2>
+      <p class="corpo">É no corredor que a decisão começa a se formar. As três telas LED rodam a mesma peça ao mesmo tempo, nas principais pontas da frente da loja. O adesivo de piso ocupa o corredor inteiro no campo de visão de quem olha para os produtos. E a ilha promocional coloca a marca no meio do caminho, não na parede.</p>
+      <div class="formatos">
+        <div class="formato"><p>3 telas LED de 1,25m × 0,70m · programação simultânea</p><span>Plano semestral</span></div>
+        <div class="formato"><p>Adesivo de piso · corredor inteiro</p><span>Plano mensal</span></div>
+        <div class="formato"><p>Ilha promocional com saia personalizada</p><span>Plano mensal</span></div>
+        <div class="formato"><p>Corredor adesivado 5m × 1,20m</p><span>Plano semestral</span></div>
+      </div>
+      <p class="ocupado">Já usado por Milka, Bauducco, Seda e Da Colônia</p>
+    </div>
+    <div class="midia-lado">
+      <figure class="ft ft-larga" style="padding:0;margin-bottom:12px"><img src="fotos/telas-led.jpg" alt="As três telas LED do Super Moy exibindo o mesmo anúncio simultaneamente" loading="lazy"></figure>
+      <div class="duas-fotos">
+        <figure class="ft ft-alta" style="padding:0"><img src="fotos/piso-bauducco.jpg" alt="Adesivo de piso da Bauducco ocupando o corredor inteiro" loading="lazy"></figure>
+        <figure class="ft ft-alta" style="padding:0"><img src="fotos/piso-seda.jpg" alt="Adesivo de piso da Seda no corredor de higiene" loading="lazy"></figure>
+      </div>
+      <figure class="ft ft-larga" style="padding:0;margin-top:12px"><img src="fotos/ilha-promocional.jpg" alt="Ilha promocional da Da Colônia no centro da loja" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="etapa">
+  <div class="wrap">
+    <div>
+      <p class="passo-n">Etapa 04 · Na gôndola</p>
+      <h2>A hora em que<br>ele decide</h2>
+      <p class="corpo">Aqui a venda acontece ou não acontece. São três pontas de gôndola iluminadas na frente da loja — a luz é o que faz o produto ser visto de longe, no meio de tudo. Só três marcas por vez, e a agenda costuma fechar com antecedência.</p>
+      <div class="formatos">
+        <div class="formato"><p>3 pontas de gôndola iluminadas</p><span>Plano mensal</span></div>
+        <div class="formato"><p>Pontas normais e orelha de gôndola</p><span>Plano mensal</span></div>
+        <div class="formato"><p>Pontos extras na frente e no fundo</p><span>A combinar</span></div>
+      </div>
+      <p class="ocupado">Ocupadas hoje por Barilla, Marilan e Milka</p>
+    </div>
+    <div class="midia-lado">
+      <div class="duas-fotos" style="margin-bottom:12px">
+        <figure class="ft ft-alta" style="padding:0"><img src="fotos/ponta-barilla.jpg" alt="Ponta de gôndola iluminada ocupada pela Barilla" loading="lazy"></figure>
+        <figure class="ft ft-alta" style="padding:0"><img src="fotos/ponta-marilan.jpg" alt="Ponta de gôndola iluminada ocupada pela Marilan" loading="lazy"></figure>
+      </div>
+      <figure class="ft ft-alta" style="padding:0"><img src="fotos/led-e-ponta.jpg" alt="Tela LED com anúncio da Milka logo acima da ponta de gôndola da mesma marca" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="etapa">
+  <div class="wrap">
+    <div>
+      <p class="passo-n">Etapa 05 · No caixa</p>
+      <h2>A última chance de<br>entrar no carrinho</h2>
+      <p class="corpo">Enquanto espera, o cliente olha em volta. São três checkouts em posição estratégica e checkstands para compra por impulso, com opção de adesivo no piso conduzindo até eles.</p>
+      <div class="formatos">
+        <div class="formato"><p>3 checkouts adesivados</p><span>Plano semestral</span></div>
+        <div class="formato"><p>Checkstands · espaços a combinar</p><span>Plano semestral</span></div>
+      </div>
+      <p class="ocupado">Checkout ocupado hoje pela Arnel Imóveis</p>
+    </div>
+    <div class="midia-lado">
+      <figure class="ft ft-quadro" style="padding:0;margin-bottom:12px"><img src="fotos/checkout.jpg" alt="Esteira do checkout adesivada com anúncio da Arnel Imóveis" loading="lazy"></figure>
+      <figure class="ft ft-alta" style="padding:0"><img src="fotos/checkstand.jpg" alt="Checkstand de compra por impulso ao lado do caixa" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="etapa">
+  <div class="wrap">
+    <div>
+      <p class="passo-n">Etapa 06 · Depois de sair</p>
+      <h2>A loja continua<br>na mão dele</h2>
+      <p class="corpo">A compra termina, mas o contato não. O conteúdo que gravamos dentro da loja continua rodando no celular do cliente à noite, quando ele já está em casa — e é o único formato aqui que sai da loja e vai atrás dele.</p>
+      <p class="corpo">Quem produz é a Dani Moy, que trabalha há quinze anos com supermercado. O vídeo não parece propaganda: parece alguém mostrando o produto no corredor.</p>
+      <div class="formatos">
+        <div class="formato"><p>Stories, posts e resenhas nos canais da loja</p><span>Por peça</span></div>
+        <div class="formato"><p>Reels com impulsionamento</p><span>Verba inclusa</span></div>
+        <div class="formato"><p>Encarte digital impulsionado</p><span>Plano mensal</span></div>
+      </div>
+      <p class="ocupado">Já produzido para Nissin, Vitao e Casagrande</p>
+    </div>
+    <div class="midia-lado">
+      <div class="videos">
+        <figure class="vid"><video src="../videos/cortes/gondola-pipoca.mp4" poster="../videos/capas/gondola-pipoca.jpg" muted loop playsinline preload="none"></video><figcaption>Gôndola · snacks</figcaption></figure>
+        <figure class="vid"><video src="../videos/cortes/gondola-fondue.mp4" poster="../videos/capas/gondola-fondue.jpg" muted loop playsinline preload="none"></video><figcaption>Gôndola · laticínio</figcaption></figure>
+        <figure class="vid"><video src="../videos/cortes/gondola-caldo.mp4" poster="../videos/capas/gondola-caldo.jpg" muted loop playsinline preload="none"></video><figcaption>Gôndola · massas</figcaption></figure>
+        <figure class="vid"><video src="../videos/cortes/resenha-chocolate.mp4" poster="../videos/capas/resenha-chocolate.jpg" muted loop playsinline preload="none"></video><figcaption>Resenha · chocolate</figcaption></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faixa" id="conteudo">
+  <div class="wrap">
+    <p class="eyebrow">Conteúdo avulso</p>
+    <h2>Produzido e publicado<br>nos canais do mercado</h2>
+    <p class="corpo" style="margin-top:24px">Entrega em sete dias. Você recebe os arquivos junto, para usar também nos seus canais.</p>
+    <div class="lista">
+      <div class="item">
+        <div><h3>Sequência de 3 stories</h3><p class="item-desc">Produto, detalhe e chamada, publicados no mesmo dia</p><p class="metrica">Alcance estimado de 6.600 contas</p></div>
+        <span class="preco">R$ 250</span>
+      </div>
+      <div class="item">
+        <div><h3>Post no feed</h3><p class="item-desc">Produto e preço, com legenda escrita</p><p class="metrica">Alcance estimado de 15.000 contas</p></div>
+        <span class="preco">R$ 350</span>
+      </div>
+      <div class="item">
+        <div><h3>Resenha em vídeo</h3><p class="item-desc">Até 60s, abertura, prova e veredicto</p><p class="metrica">Alcance estimado de 20.000 contas</p></div>
+        <span class="preco">R$ 400</span>
+      </div>
+      <div class="item">
+        <div><span class="tag">Maior alcance</span><h3>Reels com impulsionamento</h3><p class="item-desc">Chega em quem ainda não segue a loja. Verba de mídia inclusa</p><p class="metrica">Alcance estimado de 100.000 contas</p></div>
+        <span class="preco">R$ 1.200</span>
+      </div>
+      <div class="item">
+        <div><h3>Alcance ampliado</h3><p class="item-desc">Verba maior no mesmo Reels</p><p class="metrica">Alcance estimado de 250.000 contas</p></div>
+        <span class="preco">+ R$ 300</span>
+      </div>
+    </div>
+    <p class="nota" style="margin-top:22px;max-width:70ch">As estimativas usam o histórico dos últimos doze meses do perfil da loja. São estimativas, não garantia de entrega.</p>
+  </div>
+</section>
+<section class="faixa escuro">
+  <div class="wrap">
+    <p class="eyebrow">O que mais ninguém entrega</p>
+    <h2>O número de venda do<br>seu produto, <span class="realce">medido</span></h2>
+    <p class="corpo" style="margin-top:24px">Nos pacotes com relatório, você recebe o giro do seu SKU comparado com as quatro semanas anteriores à ativação, mais foto da execução, leitura da prateleira com preço dos concorrentes e o que o cliente falou na frente da gôndola.</p>
+    <p style="margin-top:30px"><a class="btn" href="relatorio-exemplo.html">Ver um relatório completo</a></p>
+    <p class="nota" style="margin-top:26px;max-width:66ch">Leitura de uma loja no canal independente do interior do RS. É diagnóstico direcional, não estudo estatístico — e está escrito assim em todo relatório.</p>
+  </div>
+</section>
+
+<section class="faixa tom" id="pacotes">
+  <div class="wrap">
+    <p class="eyebrow">Pacotes mensais</p>
+    <h2>Exposição, conteúdo<br>e número, juntos</h2>
+    <p class="corpo" style="margin-top:24px">Contratar separado funciona. Contratar junto sai melhor — e é o único jeito de saber o que a exposição fez com a venda.</p>
+
+    <div class="pacotes">
+      <div class="pacote">
+        <h3>Experimentação</h3>
+        <span class="preco">R$ 800<small>/mês</small></span>
+        <div class="bloco-lista"><p class="t">Exposição</p><ul><li>Ponta na área de fundo</li></ul></div>
+        <div class="bloco-lista"><p class="t">Conteúdo</p><ul><li>Sequência de 3 stories</li></ul></div>
+      </div>
+      <div class="pacote">
+        <h3>Vitrine</h3>
+        <span class="preco">R$ 2.400<small>/mês</small></span>
+        <div class="bloco-lista"><p class="t">Exposição</p><ul><li>Ponta iluminada</li><li>Tela LED</li></ul></div>
+        <div class="bloco-lista"><p class="t">Conteúdo</p><ul><li>1 Reels com impulsionamento</li><li>3 stories</li></ul></div>
+      </div>
+      <div class="pacote destaque">
+        <span class="tag">Mais contratado</span>
+        <h3>Giro</h3>
+        <span class="preco">R$ 4.900<small>/mês</small></span>
+        <div class="bloco-lista"><p class="t">Exposição</p><ul><li>Ponta iluminada</li><li>Tela LED e rádio indoor</li><li>Uma degustação de sábado</li></ul></div>
+        <div class="bloco-lista"><p class="t">Conteúdo</p><ul><li>2 Reels, 1 post, 6 stories</li><li>1 resenha em vídeo</li></ul></div>
+        <div class="bloco-lista"><p class="t">Dado</p><ul><li>Relatório de sell-out</li></ul></div>
+      </div>
+      <div class="pacote">
+        <h3>Marca do mês</h3>
+        <span class="preco">R$ 8.500<small>/mês</small></span>
+        <div class="bloco-lista"><p class="t">Exposição</p><ul><li>Ponta iluminada e ponto extra</li><li>Tela LED, rádio e checkstand</li><li>Duas degustações</li></ul></div>
+        <div class="bloco-lista"><p class="t">Conteúdo</p><ul><li>Pack completo do mês</li><li>Encarte impulsionado</li></ul></div>
+        <div class="bloco-lista"><p class="t">Dado</p><ul><li>Relatório de sell-out</li><li>Exclusividade de categoria</li></ul></div>
+      </div>
+    </div>
+
+    <p class="nota" style="margin-top:28px;max-width:76ch">Itens de conteúdo também podem ser contratados avulsos, com preço aberto — <a href="#conteudo" style="color:var(--acento-tx);font-weight:500">ver tabela de conteúdo</a>. Contratos trimestrais têm condição especial. Bonificação é aceita como parte do pagamento, conforme o pacote.</p>
+  </div>
+</section>
+
+<section class="faixa" id="longo">
+  <div class="wrap">
+    <p class="eyebrow">Todos os formatos</p>
+    <h2>Inventário completo</h2>
+    <p class="corpo" style="margin-top:24px">Cada espaço tem plano definido e disponibilidade limitada por categoria. Os valores vão na tabela enviada por e-mail.</p>
+    <div class="tabela">
+      <div class="tl"><p>Painel externo 5m × 2,50m</p><span>Plano anual</span></div>
+      <div class="tl"><p>Painel externo 2,30m × 2,30m</p><span>Plano anual</span></div>
+      <div class="tl"><p>16 carrinhos · 64 placas</p><span>Plano anual</span></div>
+      <div class="tl"><p>Corredor adesivado 5m × 1,20m</p><span>Plano semestral</span></div>
+      <div class="tl"><p>3 telas LED · programação simultânea</p><span>Plano semestral</span></div>
+      <div class="tl"><p>Rádio indoor · programação exclusiva</p><span>Plano semestral</span></div>
+      <div class="tl"><p>3 checkouts adesivados</p><span>Plano semestral</span></div>
+      <div class="tl"><p>Checkstands</p><span>Plano semestral</span></div>
+      <div class="tl"><p>3 pontas de gôndola iluminadas</p><span>Plano mensal</span></div>
+      <div class="tl"><p>Pontas normais e orelha de gôndola</p><span>Plano mensal</span></div>
+      <div class="tl"><p>Ilha promocional com saia personalizada</p><span>Plano mensal</span></div>
+      <div class="tl"><p>Ponto extra de entrada e de fundo</p><span>Plano mensal</span></div>
+      <div class="tl"><p>Adesivo de piso · corredor inteiro</p><span>Plano mensal</span></div>
+      <div class="tl"><p>Uniformes: camiseta, jaqueta, boné, avental</p><span>Mínimo 20 unidades</span></div>
+      <div class="tl"><p>Saco de pão francês e saco de lanche</p><span>Mínimo 25 milheiros</span></div>
+      <div class="tl"><p>E-commerce e encarte digital</p><span>Plano mensal</span></div>
+    </div>
+  </div>
+</section>
+<section class="faixa tom">
+  <div class="wrap">
+    <p class="eyebrow">Como contratar</p>
+    <h2>Quatro passos</h2>
+    <div class="passos">
+      <div class="passo">
+        <p class="n">01</p>
+        <h3>Você pede a tabela</h3>
+        <p>Pelo formulário abaixo ou pelo seu representante. Chega por e-mail no mesmo dia útil.</p>
+      </div>
+      <div class="passo">
+        <p class="n">02</p>
+        <h3>Escolhemos juntos</h3>
+        <p>Formato, período e categoria. A disponibilidade varia por mês e por categoria.</p>
+      </div>
+      <div class="passo">
+        <p class="n">03</p>
+        <h3>Reserva e contrato</h3>
+        <p>Pagamento em dinheiro, verba já contratada ou parte em bonificação, conforme o plano.</p>
+      </div>
+      <div class="passo">
+        <p class="n">04</p>
+        <h3>Execução</h3>
+        <p>Você recebe foto da execução. Nos pacotes com relatório, também o número de venda no fim.</p>
+      </div>
+    </div>
+    <p class="nota" style="margin-top:32px;max-width:70ch">Reserva de espaço com antecedência mínima recomendada de 15 dias. Produção de conteúdo tem prazo de sete dias após a chegada do produto.</p>
+  </div>
+</section>
+
+<section class="cta" id="contratar">
+  <div class="wrap">
+    <h2>Receba a tabela<br>de valores</h2>
+    <p>Formatos, períodos, condições de pagamento e bonificação. Enviada por e-mail, com a disponibilidade do mês.</p>
+
+    <form class="form" method="POST" action="https://api.web3forms.com/submit">
+      <!-- Cole aqui a mesma chave usada nas outras páginas -->
+      <input type="hidden" name="access_key" value="COLE-SUA-CHAVE-AQUI">
+      <input type="hidden" name="subject" value="Pedido de tabela — mídia kit Super Moy">
+      <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+      <div class="linha">
+        <div class="campo">
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" name="nome" autocomplete="name" required>
+        </div>
+        <div class="campo">
+          <label for="cargo">Cargo</label>
+          <select id="cargo" name="cargo" required>
+            <option value="" selected disabled>Selecione</option>
+            <option>Trade marketing</option>
+            <option>Marketing</option>
+            <option>Representante comercial</option>
+            <option>Gerente de vendas</option>
+            <option>Sócio ou diretor</option>
+            <option>Outro</option>
+          </select>
+        </div>
+      </div>
+      <div class="linha">
+        <div class="campo">
+          <label for="marca">Marca ou indústria</label>
+          <input type="text" id="marca" name="marca" autocomplete="organization" required>
+        </div>
+        <div class="campo">
+          <label for="produto">Produto ou categoria</label>
+          <input type="text" id="produto" name="produto" required>
+        </div>
+      </div>
+      <div class="campo" style="margin-bottom:20px">
+        <label for="email">E-mail corporativo</label>
+        <input type="email" id="email" name="email" autocomplete="email" required>
+      </div>
+      <button class="btn" type="submit" style="border:0;cursor:pointer">Receber a tabela</button>
+      <p class="form-nota">Respondo em até um dia útil. Seus dados são usados só para essa resposta.</p>
+    </form>
+  </div>
+</section>
+
+<footer class="rodape">
+  <div class="wrap">
+    <div class="rodape-topo">
+      <div>
+        <img class="logo-pe" src="fotos/logo-supermoy.png" srcset="fotos/logo-supermoy.png 1x, fotos/logo-supermoy@2x.png 2x" alt="Super Moy Supermercado" width="297" height="220">
+        <p class="nota" style="color:var(--tx-claro-nota);margin-top:10px">Bento Gonçalves com General Osório<br>Centro · Passo Fundo, RS</p>
+      </div>
+      <div class="rodape-zap">
+        <p>Prefere conversar antes<br>de pedir a tabela?</p>
+        <a class="btn-contorno" href="https://wa.me/5554999166672?text=Oi%2C%20vim%20pelo%20m%C3%ADdia%20kit%20do%20Super%20Moy." target="_blank" rel="noopener">Falar no WhatsApp</a>
+      </div>
+    </div>
+    <div class="rodape-base">
+      <p>
+        <a href="mailto:contato@danimoy.com.br">contato@danimoy.com.br</a><br>
+        <a href="../privacidade.html">Política de privacidade</a>
+      </p>
+      <p class="direita">
+        Sua marca ainda não vende aqui?<br>
+        <a class="destaque" href="../">Veja o catálogo de conteúdo avulso.</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var calmo=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!('IntersectionObserver' in window)||calmo) return;
+  var o=new IntersectionObserver(function(is){is.forEach(function(i){
+    var v=i.target;if(i.isIntersecting){v.play().catch(function(){});}else{v.pause();}});},{threshold:.35});
+  document.querySelectorAll('.vid video').forEach(function(v){o.observe(v);});
+})();
+</script>
+</body>
+</html>
