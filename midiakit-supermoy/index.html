@@ -60,9 +60,9 @@ a{color:inherit}
 .topo .wrap{display:flex;justify-content:space-between;align-items:center;padding:22px var(--respiro);gap:16px}
 .marca{font-family:var(--display);font-weight:800;font-size:19px;color:var(--amarelo);text-decoration:none}
 .marca{display:flex;align-items:center;gap:14px}
-.marca img{width:auto;height:38px;display:block}
+.marca img{width:auto;height:54px;display:block}
 .marca span{color:var(--tx-claro-fraco);font-weight:500;font-family:var(--util);font-size:10.5px;text-transform:uppercase;letter-spacing:.2em;padding-left:14px;border-left:1px solid rgba(251,248,242,.25)}
-.logo-pe{width:auto;height:56px;display:block;margin-bottom:14px}
+.logo-pe{width:auto;height:68px;display:block;margin-bottom:14px}
 .menu{display:flex;gap:24px}
 .menu a{font-family:var(--util);font-weight:500;font-size:10.5px;text-transform:uppercase;letter-spacing:.22em;color:var(--tx-claro-fraco);text-decoration:none}
 .menu a:hover{color:var(--amarelo)}
@@ -169,6 +169,9 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 .quatro h3{font-size:17px;margin-bottom:7px;color:var(--tx-claro)}
 .quatro p{font-size:15px;line-height:1.55;color:var(--tx-claro-fraco)}
 .quatro .topo-filete{border-top:1px solid var(--filete-escuro);padding-top:16px}
+.conta{background:var(--amarelo);color:var(--marrom);border-radius:2px;padding:22px 26px;margin-top:34px}
+.conta p{font-size:16.5px;line-height:1.6;max-width:78ch}
+.conta strong{font-family:var(--display);font-weight:700}
 .tag-vazia{visibility:hidden}
 .videos-topo{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:14px}
 .setas{display:flex;gap:8px}
@@ -717,6 +720,17 @@ img{display:block;width:100%;height:100%;object-fit:cover}
   </div>
 </footer>
 
+
+<div class="modal" id="modal" hidden role="dialog" aria-modal="true" aria-label="Vídeo do portfólio">
+  <div class="modal-caixa">
+    <video class="modal-video" id="modal-video" controls playsinline preload="none"></video>
+    <div class="modal-pe">
+      <span class="modal-legenda" id="modal-legenda"></span>
+      <button class="fechar" type="button" id="fechar">Fechar</button>
+    </div>
+  </div>
+</div>
+
 <script>
 (function(){
   var calmo=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -742,6 +756,7 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 
   var modal=document.getElementById('modal'),mv=document.getElementById('modal-video'),
       ml=document.getElementById('modal-legenda'),bt=document.getElementById('fechar'),ult=null;
+  if(!modal||!mv||!bt) return;
   function abrir(b){ult=b;mv.src=b.dataset.completo;ml.textContent=b.dataset.legenda||'';
     modal.hidden=false;document.body.style.overflow='hidden';
     document.querySelectorAll('.trilho video').forEach(function(v){v.pause();});
@@ -754,15 +769,5 @@ img{display:block;width:100%;height:100%;object-fit:cover}
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!modal.hidden)fechar();});
 })();
 </script>
-
-<div class="modal" id="modal" hidden role="dialog" aria-modal="true" aria-label="Vídeo do portfólio">
-  <div class="modal-caixa">
-    <video class="modal-video" id="modal-video" controls playsinline preload="none"></video>
-    <div class="modal-pe">
-      <span class="modal-legenda" id="modal-legenda"></span>
-      <button class="fechar" type="button" id="fechar">Fechar</button>
-    </div>
-  </div>
-</div>
 </body>
 </html>
