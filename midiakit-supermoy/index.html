@@ -149,6 +149,8 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 .escuro .ft{background:var(--slot-escuro)}
 .ft span{font-family:var(--util);font-size:9.5px;text-transform:uppercase;letter-spacing:.14em;color:#5C5145}
 .escuro .ft span{color:var(--tx-claro-fraco)}
+.legendada{position:relative}
+.legendada figcaption{position:absolute;left:10px;bottom:10px;font-family:var(--util);font-size:9px;text-transform:uppercase;letter-spacing:.14em;color:var(--base);background:rgba(36,21,16,.78);padding:5px 9px;border-radius:2px}
 .ft-larga{aspect-ratio:16/9}.ft-quadro{aspect-ratio:4/3}.ft-alta{aspect-ratio:3/4}.ft-capa{aspect-ratio:21/9}
 .hero .ft-capa{margin-top:52px;border-radius:2px 2px 0 0}
 .etapa{padding:var(--secao) 0;border-bottom:1px solid var(--filete)}
@@ -206,13 +208,14 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 .item-desc{font-size:16px;line-height:1.5;color:var(--tx-fraco);margin-top:5px;max-width:58ch}
 .escuro .item-desc{color:var(--tx-claro-fraco)}
 .metrica{font-family:var(--util);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--acento-tx);margin-top:9px}
+.metrica .forte{background-image:linear-gradient(rgba(255,201,13,.6),rgba(255,201,13,.6));background-repeat:no-repeat;background-size:100% .95em;background-position:0 62%;color:var(--marrom);font-weight:500;padding:1px 4px}
 .escuro .metrica{color:var(--amarelo)}
 .preco{font-family:var(--display);font-weight:800;font-size:22px;letter-spacing:-.02em;white-space:nowrap;color:var(--tx-forte)}
 .escuro .preco{color:var(--tx-claro)}
 .preco small{font-family:var(--display);font-weight:500;font-size:14px;color:var(--tx-fraco)}
 .escuro .preco small{color:var(--tx-claro-fraco)}
 .tabela{margin-top:30px;display:grid;grid-template-columns:1fr 1fr;gap:0 44px}
-.tl{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px solid var(--filete)}
+.tl{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;padding:13px 0;border-bottom:1px solid var(--filete)}
 .tl p{font-family:var(--display);font-weight:500;font-size:15.5px;color:var(--tx-forte)}
 .tl span{font-family:var(--util);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--tx-fraco);white-space:nowrap;padding-top:3px}
 @media (max-width:760px){.tabela{grid-template-columns:1fr}}
@@ -281,12 +284,12 @@ img{display:block;width:100%;height:100%;object-fit:cover}
   <div class="wrap">
     <div><p class="num-rotulo">Tickets por mês</p><p class="num">30.000</p></div>
     <div><p class="num-rotulo">Anos de atuação</p><p class="num">20+</p></div>
-    <div><p class="num-rotulo">Alcance por Reels*</p><p class="num">100 mil</p></div>
+    <div><p class="num-rotulo">Visualizações por Reels*</p><p class="num">100 mil</p></div>
     <div><p class="num-rotulo">Pontas iluminadas</p><p class="num">3</p></div>
   </div>
   <div class="wrap" style="padding-bottom:30px">
     <figure class="ft ft-capa" style="padding:0;margin:0 0 18px"><img src="fotos/movimento.jpg" alt="Movimento nos caixas do Super Moy em dia de pico" loading="lazy"></figure>
-    <p class="nota">*Alcance impulsionado, com verba de mídia da loja, para público local. Média dos últimos doze meses. Loja nova, moderna, com mix de produtos diferenciado e presença forte nas redes sociais.</p>
+    <p class="nota">*Reels impulsionado, com verba de mídia da loja, para público local. Média dos últimos doze meses. Loja nova, moderna, com mix de produtos diferenciado e presença forte nas redes sociais.</p>
   </div>
 </section>
 
@@ -326,8 +329,12 @@ img{display:block;width:100%;height:100%;object-fit:cover}
     </div>
     <div class="midia-lado duas-fotos">
       <figure class="ft ft-alta" style="padding:0"><img src="fotos/entrada-ponto-extra.jpg" alt="Ponto extra de entrada com pallet da cerveja Original" loading="lazy"></figure>
-      <!-- FALTA: carrinho do Super Moy, close da placa · 3:4 · salvar como fotos/carrinho.jpg -->
-      <figure class="ft ft-alta"><span>Foto · carrinho</span></figure>
+      <!-- PROVISÓRIO: exemplo de aplicação do fornecedor de mídia em carrinho.
+           Substituir por foto de carrinho do Super Moy quando houver. -->
+      <figure class="ft ft-alta legendada" style="padding:0">
+        <img src="fotos/carrinho-exemplo.jpg" alt="Exemplo de carrinho de supermercado com mídia aplicada nas placas laterais" loading="lazy">
+        <figcaption>Exemplo de aplicação</figcaption>
+      </figure>
     </div>
   </div>
 </section>
@@ -497,23 +504,23 @@ img{display:block;width:100%;height:100%;object-fit:cover}
     <p class="corpo" style="margin-top:24px">Entrega em sete dias. Você recebe os arquivos junto, para usar também nos seus canais.</p>
     <div class="lista">
       <div class="item">
-        <div><h3>Sequência de 3 stories</h3><p class="item-desc">Produto, detalhe e chamada, publicados no mesmo dia</p><p class="metrica">Alcance estimado de 6.600 contas</p></div>
+        <div><h3>Sequência de 3 stories</h3><p class="item-desc">Produto, detalhe e chamada, publicados no mesmo dia</p><p class="metrica">Alcance estimado de 6.600 pessoas</p></div>
         <span class="preco">R$ 250</span>
       </div>
       <div class="item">
-        <div><h3>Post no feed</h3><p class="item-desc">Produto e preço, com legenda escrita</p><p class="metrica">Alcance estimado de 15.000 contas</p></div>
+        <div><h3>Post no feed</h3><p class="item-desc">Produto e preço, com legenda escrita</p><p class="metrica">Alcance estimado de 15.000 pessoas</p></div>
         <span class="preco">R$ 350</span>
       </div>
       <div class="item">
-        <div><h3>Resenha em vídeo</h3><p class="item-desc">Até 60s, abertura, prova e veredicto</p><p class="metrica">Alcance estimado de 20.000 contas</p></div>
+        <div><h3>Resenha em vídeo</h3><p class="item-desc">Até 60s, abertura, prova e veredicto</p><p class="metrica">Alcance estimado de 20.000 pessoas</p></div>
         <span class="preco">R$ 400</span>
       </div>
       <div class="item">
-        <div><span class="tag">Maior alcance</span><h3>Reels com impulsionamento</h3><p class="item-desc">Chega em quem ainda não segue a loja. Verba de mídia inclusa</p><p class="metrica">Alcance estimado de 100.000 contas</p></div>
+        <div><span class="tag">Maior alcance</span><h3>Reels com impulsionamento</h3><p class="item-desc">Chega em quem ainda não segue a loja. Verba de mídia inclusa</p><p class="metrica">Estimativa de <span class="forte">100.000 visualizações</span></p></div>
         <span class="preco">R$ 1.200</span>
       </div>
       <div class="item">
-        <div><h3>Alcance ampliado</h3><p class="item-desc">Verba maior no mesmo Reels</p><p class="metrica">Alcance estimado de 250.000 contas</p></div>
+        <div><h3>Verba ampliada</h3><p class="item-desc">Verba maior no mesmo Reels</p><p class="metrica">Estimativa de <span class="forte">250.000 visualizações</span></p></div>
         <span class="preco">+ R$ 300</span>
       </div>
     </div>
@@ -568,7 +575,7 @@ img{display:block;width:100%;height:100%;object-fit:cover}
         <span class="tag tag-vazia" aria-hidden="true">&nbsp;</span><h3>Marca do mês</h3>
         <span class="preco">R$ 8.500<small>/mês</small></span>
         <div class="bloco-lista"><p class="t">Exposição</p><ul><li>Ponta iluminada e ponto extra</li><li>Tela LED, rádio e checkstand</li><li>Duas degustações</li></ul></div>
-        <div class="bloco-lista"><p class="t">Conteúdo</p><ul><li>Pack completo do mês</li><li>Encarte impulsionado</li></ul></div>
+        <div class="bloco-lista"><p class="t">Conteúdo</p><ul><li>Reels com impulsionamento</li><li>Resenha em vídeo</li><li>Post no feed</li><li>Sequência de 3 stories</li><li>Encarte digital impulsionado</li></ul></div>
         <div class="bloco-lista"><p class="t">Dado</p><ul><li>Relatório de sell-out</li><li>Exclusividade de categoria</li></ul></div>
       </div>
     </div>
@@ -598,23 +605,22 @@ img{display:block;width:100%;height:100%;object-fit:cover}
     <h2>Inventário completo</h2>
     <p class="corpo" style="margin-top:24px">Cada espaço tem plano definido e disponibilidade limitada por categoria. Os valores vão na tabela enviada por e-mail.</p>
     <div class="tabela">
-      <div class="tl"><p>Painel externo 5m × 2,50m</p><span>Plano anual</span></div>
-      <div class="tl"><p>Painel externo 2,30m × 2,30m</p><span>Plano anual</span></div>
-      <div class="tl"><p>16 carrinhos · 64 placas</p><span>Plano anual</span></div>
-      <div class="tl"><p>Corredor adesivado 5m × 1,20m</p><span>Plano semestral</span></div>
-      <div class="tl"><p>3 telas LED · programação simultânea</p><span>Plano semestral</span></div>
-      <div class="tl"><p>Rádio indoor · programação exclusiva</p><span>Plano semestral</span></div>
-      <div class="tl"><p>3 checkouts adesivados</p><span>Plano semestral</span></div>
-      <div class="tl"><p>Checkstands</p><span>Plano semestral</span></div>
       <div class="tl"><p>3 pontas de gôndola iluminadas</p><span>Plano mensal</span></div>
       <div class="tl"><p>Pontas normais e orelha de gôndola</p><span>Plano mensal</span></div>
       <div class="tl"><p>Ilha promocional com saia personalizada</p><span>Plano mensal</span></div>
       <div class="tl"><p>Ponto extra de entrada e de fundo</p><span>Plano mensal</span></div>
       <div class="tl"><p>Adesivo de piso · corredor inteiro</p><span>Plano mensal</span></div>
-      <div class="tl"><p>Uniformes: camiseta, jaqueta, boné, avental</p><span>Mínimo 20 unidades</span></div>
-      <div class="tl"><p>Saco de pão francês e saco de lanche</p><span>Mínimo 25 milheiros</span></div>
       <div class="tl"><p>E-commerce e encarte digital</p><span>Plano mensal</span></div>
+      <div class="tl"><p>3 telas LED · programação simultânea</p><span>Plano semestral</span></div>
+      <div class="tl"><p>Rádio indoor · programação exclusiva</p><span>Plano semestral</span></div>
+      <div class="tl"><p>Corredor adesivado 5m × 1,20m</p><span>Plano semestral</span></div>
+      <div class="tl"><p>3 checkouts adesivados</p><span>Plano semestral</span></div>
+      <div class="tl"><p>Checkstands</p><span>Plano semestral</span></div>
+      <div class="tl"><p>16 carrinhos · 64 placas</p><span>Plano anual</span></div>
+      <div class="tl"><p>Painel externo 5m × 2,50m</p><span>Plano anual</span></div>
+      <div class="tl"><p>Painel externo 2,30m × 2,30m</p><span>Plano anual</span></div>
     </div>
+    <p class="nota" style="margin-top:26px;max-width:76ch">Cada espaço tem disponibilidade limitada por categoria e período. A tabela com valores, condições de pagamento e bonificação vai por e-mail.</p>
   </div>
 </section>
 <section class="faixa tom">
